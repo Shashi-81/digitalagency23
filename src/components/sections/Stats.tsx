@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { Counter } from "../ui-extra/Counter";
 import { Reveal, StaggerGroup, StaggerItem } from "../ui-extra/Reveal";
 
@@ -6,7 +7,7 @@ const STATS = [
   { value: 48, suffix: "M+", prefix: "$", label: "Raised by our clients", sub: "post-launch, last 24 months" },
   { value: 210, suffix: "+", label: "Products launched", sub: "from seed to Series C" },
   { value: 2.1, suffix: "s", label: "Avg. LCP shipped", sub: "core web vitals, p75", decimals: 1 },
-];
+] as const;
 
 export function Stats() {
   return (
@@ -32,15 +33,19 @@ export function Stats() {
 
         <StaggerGroup className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-border rounded-3xl overflow-hidden">
           {STATS.map((s) => (
-            <StaggerItem key={s.label} className="bg-background p-8 md:p-10 group hover:bg-card transition-colors">
+            <StaggerItem
+              key={s.label}
+              className="bg-background p-8 md:p-10 hover:bg-card transition-colors"
+            >
               <div className="font-display text-5xl md:text-6xl font-bold tracking-tight leading-none">
-                {s.prefix && <span className="text-primary">{s.prefix}</span>}
+                {"prefix" in s && s.prefix && <span className="text-primary">{s.prefix}</span>}
                 <span className="text-gradient">
-                  {s.decimals ? (
-                    <DecimalCounter to={s.value} suffix={s.suffix ?? ""} />
+                  {"decimals" in s && s.decimals ? (
+                    <DecimalCounter to={s.value} decimals={s.decimals} />
                   ) : (
-                    <Counter to={s.value} suffix={s.suffix ?? ""} />
+                    <Counter to={s.value} />
                   )}
+                  {s.suffix}
                 </span>
               </div>
               <p className="mt-5 font-medium text-foreground">{s.label}</p>
@@ -53,18 +58,33 @@ export function Stats() {
   );
 }
 
-function DecimalCounter({ to, suffix }: { to: number; suffix: string }) {
-  // Counter is integer-only; multiply, then format.
-  return (
-    <>
-      <Counter to={Math.round(to * 10)} />
-      <span className="sr-only">{suffix}</span>
-      <DecimalSuffix suffix={suffix} />
-    </>
-  );
-}
+function DecimalCounter({ to, decimals, duration = 1800 }: { to: number; decimals: number; duration?: number }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const [val, setVal] = useState(0);
+  const started = useRef(false);
 
-function DecimalSuffix({ suffix }: { suffix: string }) {
-  // Render a fake decimal by visual offset: this keeps it simple without a new component.
-  return <span aria-hidden>{suffix}</span>;
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting && !started.current) {
+          started.current = true;
+          const start = performance.now();
+          const tick = (t: number) => {
+            const p = Math.min((t - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - p, 3);
+            setVal(to * eased);
+            if (p < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+        }
+      },
+      { threshold: 0.3 },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [to, duration]);
+
+  return <span ref={ref}>{val.toFixed(decimals)}</span>;
 }
