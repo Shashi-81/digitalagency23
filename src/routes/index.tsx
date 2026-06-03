@@ -13,15 +13,63 @@ import { Faq } from "@/components/sections/Faq";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { Contact } from "@/components/sections/Contact";
 import { CursorGlow } from "@/components/ui-extra/CursorGlow";
+import { FAQS } from "@/lib/faqs";
+
+const TITLE = "NexaStudio — Digital Experiences That Convert";
+const DESCRIPTION =
+  "A full-stack design & development studio building brands, products, and growth systems for ambitious teams.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "NexaStudio — Digital Experiences That Convert" },
-      { name: "description", content: "A full-stack design & development studio building brands, products, and growth systems for ambitious teams." },
-      { property: "og:title", content: "NexaStudio — Digital Experiences That Convert" },
-      { property: "og:description", content: "A full-stack design & development studio building brands, products, and growth systems for ambitious teams." },
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "/" },
+      { property: "og:image", content: "/og-image.jpg" },
+      { property: "og:image:width", content: "1216" },
+      { property: "og:image:height", content: "640" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:image", content: "/og-image.jpg" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          name: "NexaStudio",
+          description: DESCRIPTION,
+          url: "/",
+          image: "/og-image.jpg",
+          priceRange: "$$$",
+          areaServed: "Worldwide",
+          serviceType: [
+            "Brand & Visual Identity",
+            "Web Design",
+            "Product Design",
+            "Web Development",
+            "Mobile App Development",
+            "Growth & SEO",
+          ],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: FAQS.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }),
+      },
     ],
   }),
   component: Index,
