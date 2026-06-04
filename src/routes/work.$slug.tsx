@@ -73,7 +73,7 @@ export const Route = createFileRoute("/work/$slug")({
 });
 
 function CaseStudy() {
-  const { project, next } = Route.useLoaderData();
+  const { project, next } = Route.useLoaderData() as { project: Project; next: Project };
   const p = project;
 
   return (
