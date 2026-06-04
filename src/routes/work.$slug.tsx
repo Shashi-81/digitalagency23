@@ -4,7 +4,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui-extra/Reveal";
 import { CursorGlow } from "@/components/ui-extra/CursorGlow";
-import { getProject, getNextProject, PROJECTS } from "@/lib/projects";
+import { getProject, getNextProject, PROJECTS, type Project } from "@/lib/projects";
 
 export const Route = createFileRoute("/work/$slug")({
   loader: ({ params }) => {
