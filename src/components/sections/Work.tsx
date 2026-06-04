@@ -1,29 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { Reveal } from "../ui-extra/Reveal";
-
-const PROJECTS = [
-  {
-    name: "Helio Finance",
-    cat: "Fintech · Web App",
-    tags: ["Design", "Development", "Brand"],
-    gradient: "linear-gradient(135deg, oklch(0.4 0.15 250), oklch(0.86 0.16 215))",
-    span: "lg:col-span-2 lg:row-span-2 min-h-[420px] lg:min-h-[640px]",
-  },
-  {
-    name: "Atlas Outdoor",
-    cat: "E-commerce · Branding",
-    tags: ["Branding", "Shopify"],
-    gradient: "linear-gradient(135deg, oklch(0.3 0.08 60), oklch(0.92 0.21 130))",
-    span: "min-h-[300px]",
-  },
-  {
-    name: "Cipher AI",
-    cat: "SaaS · AI Platform",
-    tags: ["Product", "AI"],
-    gradient: "linear-gradient(135deg, oklch(0.2 0.05 300), oklch(0.7 0.18 320))",
-    span: "min-h-[300px]",
-  },
-];
+import { PROJECTS } from "@/lib/projects";
 
 export function Work() {
   return (
@@ -45,13 +23,13 @@ export function Work() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
           {PROJECTS.map((p) => (
-            <Reveal key={p.name} className={p.span}>
-              <a
-                href="#contact"
+            <Reveal key={p.slug} className={p.span}>
+              <Link
+                to="/work/$slug"
+                params={{ slug: p.slug }}
                 className="group block h-full rounded-3xl overflow-hidden relative border border-border"
                 style={{ background: p.gradient }}
               >
-                {/* texture */}
                 <div
                   className="absolute inset-0 opacity-20 mix-blend-overlay"
                   style={{
@@ -77,7 +55,7 @@ export function Work() {
                     </div>
                   </div>
                 </div>
-              </a>
+              </Link>
             </Reveal>
           ))}
         </div>
