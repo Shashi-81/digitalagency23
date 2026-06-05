@@ -14,7 +14,9 @@ import { Faq } from "@/components/sections/Faq";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { Contact } from "@/components/sections/Contact";
 import { CursorGlow } from "@/components/ui-extra/CursorGlow";
+import { MobileStickyCta } from "@/components/MobileStickyCta";
 import { FAQS } from "@/lib/faqs";
+
 
 const TITLE = "NexaStudio — Digital Experiences That Convert";
 const DESCRIPTION =
@@ -96,6 +98,8 @@ function Index() {
         <Contact />
       </main>
       <Footer />
+      <MobileStickyCta />
     </div>
   );
 }
+

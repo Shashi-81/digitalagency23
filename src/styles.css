@@ -97,7 +97,16 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
   }
+
+  /* Larger comfortable tap targets on touch devices */
+  @media (pointer: coarse) {
+    a, button, [role="button"] {
+      touch-action: manipulation;
+    }
+  }
+
 
   h1, h2, h3, h4 {
     font-family: var(--font-display);
