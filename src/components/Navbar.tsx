@@ -66,11 +66,12 @@ export function Navbar() {
 
             <button
               onClick={() => setOpen(true)}
-              className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full glass"
+              className="md:hidden inline-flex h-11 w-11 items-center justify-center rounded-full glass active:scale-95 transition-transform"
               aria-label="Open menu"
             >
               <Menu className="h-5 w-5" />
             </button>
+
           </nav>
         </div>
       </header>
@@ -85,10 +86,11 @@ export function Navbar() {
           >
             <div className="flex items-center justify-between px-6 py-5">
               <span className="font-display text-xl font-bold">Nexa<span className="text-primary">Studio</span></span>
-              <button onClick={() => setOpen(false)} className="h-10 w-10 inline-flex items-center justify-center rounded-full glass" aria-label="Close">
+              <button onClick={() => setOpen(false)} className="h-11 w-11 inline-flex items-center justify-center rounded-full glass active:scale-95 transition-transform" aria-label="Close">
                 <X className="h-5 w-5" />
               </button>
             </div>
+
             <ul className="flex flex-col items-start gap-6 px-8 mt-12">
               {links.map((l, i) => (
                 <motion.li
