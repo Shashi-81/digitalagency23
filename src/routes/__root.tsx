@@ -13,21 +13,81 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
+  const popular = [
+    { to: "/", label: "Home" },
+    { to: "/hire-us", label: "Hire Us" },
+    { to: "/resources", label: "Free Resources" },
+  ] as const;
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+    <div className="relative min-h-screen flex items-center justify-center bg-background px-6 overflow-hidden">
+      <div
+        className="absolute inset-0 opacity-30 blur-3xl pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(60% 60% at 50% 40%, oklch(0.6 0.18 200 / 0.4), transparent 70%)",
+        }}
+        aria-hidden
+      />
+      <div className="relative max-w-xl text-center">
+        <p className="text-xs uppercase tracking-[0.25em] text-primary mb-4">— Error 404</p>
+        <h1 className="font-display text-7xl md:text-9xl font-bold leading-none tracking-tight">
+          4<span className="text-primary">0</span>4
+        </h1>
+        <h2 className="mt-6 font-display text-2xl md:text-3xl font-bold">
+          Looks like this page took a vacation.
+        </h2>
+        <p className="mt-3 text-sm md:text-base text-muted-foreground">
+          The link might be broken, or the page has moved. Try one of these instead:
         </p>
-        <div className="mt-6">
+
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            const data = new FormData(e.currentTarget);
+            const q = String(data.get("q") ?? "").trim();
+            if (q) window.location.href = `/?q=${encodeURIComponent(q)}`;
+          }}
+          className="mt-8 mx-auto flex max-w-md gap-2"
+        >
+          <label htmlFor="404-search" className="sr-only">Search</label>
+          <input
+            id="404-search"
+            name="q"
+            placeholder="Search the site…"
+            className="flex-1 bg-transparent border border-border rounded-full px-5 py-3 text-sm placeholder:text-muted-foreground focus:border-primary outline-none"
+          />
+          <button
+            type="submit"
+            className="rounded-full bg-primary text-primary-foreground px-5 py-3 text-sm font-medium hover:shadow-[0_0_30px_-5px_var(--primary)] transition-shadow"
+          >
+            Search
+          </button>
+        </form>
+
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground px-6 py-3 text-sm font-medium hover:shadow-[0_0_30px_-5px_var(--primary)] transition-shadow"
           >
-            Go home
+            Back to Home
           </Link>
+        </div>
+
+        <div className="mt-10">
+          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">Popular pages</p>
+          <ul className="flex flex-wrap justify-center gap-2">
+            {popular.map((p) => (
+              <li key={p.to}>
+                <Link
+                  to={p.to}
+                  className="inline-flex items-center rounded-full glass px-4 py-2 text-sm hover:text-primary hover:border-primary/40 transition-colors"
+                >
+                  {p.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>
