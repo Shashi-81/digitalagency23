@@ -111,7 +111,7 @@ export const SERVICES: Service[] = [
       { q: "Do you do user testing?", a: "Yes. We use Maze, Hotjar and moderated sessions to validate designs before development begins." },
       { q: "Will my developer be able to implement the designs?", a: "Every handoff includes annotated specs, spacing guides and a Figma Dev Mode link so developers have everything they need." },
     ],
-    related: ["web-development", "brand-identity"],
+    related: ["web-development", "brand-identity", "mobile-app-development"],
   },
   {
     slug: "web-development",
@@ -187,7 +187,7 @@ export const SERVICES: Service[] = [
       { q: "Will my website rank on Google?", a: "We implement full technical SEO: fast load times, structured data, semantic HTML, meta tags and sitemaps — the best foundation to rank." },
       { q: "What happens after launch?", a: "We provide 30 days of free bug fixes post-launch, plus optional monthly maintenance packages." },
     ],
-    related: ["ui-ux-design", "seo-digital-marketing"],
+    related: ["ui-ux-design", "seo-digital-marketing", "ai-integration"],
   },
   {
     slug: "mobile-app-development",
@@ -259,7 +259,7 @@ export const SERVICES: Service[] = [
       { q: "Do you provide post-launch support?", a: "Yes — we offer maintenance packages covering bug fixes, OS updates and new features." },
       { q: "Can you build the backend too?", a: "Absolutely — we provide full-stack development including APIs, databases and admin dashboards." },
     ],
-    related: ["ui-ux-design", "ai-integration"],
+    related: ["ui-ux-design", "ai-integration", "web-development"],
   },
   {
     slug: "brand-identity",
@@ -329,7 +329,7 @@ export const SERVICES: Service[] = [
       { q: "Do I own the final logo?", a: "100% — full commercial rights transfer upon final payment." },
       { q: "Can you redesign my existing brand?", a: "Yes. We start with a brand audit and can evolve or completely reimagine your identity." },
     ],
-    related: ["ui-ux-design", "web-development"],
+    related: ["ui-ux-design", "web-development", "seo-digital-marketing"],
   },
   {
     slug: "seo-digital-marketing",
@@ -403,7 +403,7 @@ export const SERVICES: Service[] = [
       { q: "How do you measure success?", a: "Rankings, organic traffic, leads generated, cost per acquisition and revenue — never vanity metrics like raw impressions." },
       { q: "Do you write the content too?", a: "Yes — our in-house SEO writers create keyword-optimized, engaging content. You review and approve before publishing." },
     ],
-    related: ["web-development", "ai-integration"],
+    related: ["web-development", "ai-integration", "brand-identity"],
   },
   {
     slug: "ai-integration",
@@ -477,7 +477,7 @@ export const SERVICES: Service[] = [
       { q: "What AI models do you use?", a: "We're model-agnostic — we choose the best model (GPT-4o, Claude, Gemini) based on your use case, cost and performance requirements." },
       { q: "How do you prevent AI hallucinations?", a: "We use RAG (Retrieval Augmented Generation), grounding prompts, output validation layers and human-in-the-loop checks for critical workflows." },
     ],
-    related: ["web-development", "mobile-app-development"],
+    related: ["web-development", "mobile-app-development", "seo-digital-marketing"],
   },
 ];
 
