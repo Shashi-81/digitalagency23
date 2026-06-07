@@ -17,7 +17,7 @@ export const Route = createFileRoute("/thank-you")({
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
       { property: "og:url", content: "/thank-you" },
-      { property: "og:image", content: "/og-image.jpg" },
+      { property: "og:image", content: "/og/thank-you.jpg" },
     ],
     links: [{ rel: "canonical", href: "/thank-you" }],
   }),
