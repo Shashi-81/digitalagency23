@@ -25,6 +25,7 @@ export const Route = createFileRoute("/thank-you")({
       { name: "twitter:description", content: DESCRIPTION },
       { name: "twitter:image", content: "/og/thank-you.jpg" },
       { name: "twitter:image:alt", content: "Thank you from NexaStudio — Message received. A senior strategist will reply within 24 hours." },
+    ],
     links: [{ rel: "canonical", href: "/thank-you" }],
   }),
   component: ThankYou,
