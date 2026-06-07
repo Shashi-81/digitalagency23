@@ -16,6 +16,7 @@ export const Route = createFileRoute("/work/$slug")({
     const p = loaderData?.project;
     const title = p ? `${p.name} — Case Study | NexaStudio` : "Case Study | NexaStudio";
     const description = p?.summary ?? "Selected work by NexaStudio.";
+    const ogImage = `/og/work-${params.slug}.jpg`;
     return {
       meta: [
         { title },
@@ -24,10 +25,13 @@ export const Route = createFileRoute("/work/$slug")({
         { property: "og:description", content: description },
         { property: "og:type", content: "article" },
         { property: "og:url", content: `/work/${params.slug}` },
-        { property: "og:image", content: "/og-image.jpg" },
+        { property: "og:image", content: ogImage },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "630" },
+        { property: "og:image:alt", content: title },
         { name: "twitter:title", content: title },
         { name: "twitter:description", content: description },
-        { name: "twitter:image", content: "/og-image.jpg" },
+        { name: "twitter:image", content: ogImage },
       ],
       links: [{ rel: "canonical", href: `/work/${params.slug}` }],
       scripts: p
