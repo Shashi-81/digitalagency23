@@ -17,6 +17,10 @@ export const Route = createFileRoute("/work/$slug")({
     const title = p ? `${p.name} — Case Study | NexaStudio` : "Case Study | NexaStudio";
     const description = p?.summary ?? "Selected work by NexaStudio.";
     const ogImage = `/og/work-${params.slug}.jpg`;
+    const headline = p?.metrics?.[0] ? `${p.metrics[0].value} ${p.metrics[0].label}` : "Real outcomes";
+    const imageAlt = p
+      ? `${p.name} case study by NexaStudio — ${headline}. View the full project.`
+      : "NexaStudio case study — View the full project.";
     return {
       meta: [
         { title },
@@ -28,10 +32,11 @@ export const Route = createFileRoute("/work/$slug")({
         { property: "og:image", content: ogImage },
         { property: "og:image:width", content: "1200" },
         { property: "og:image:height", content: "630" },
-        { property: "og:image:alt", content: title },
+        { property: "og:image:alt", content: imageAlt },
         { name: "twitter:title", content: title },
         { name: "twitter:description", content: description },
         { name: "twitter:image", content: ogImage },
+        { name: "twitter:image:alt", content: imageAlt },
       ],
       links: [{ rel: "canonical", href: `/work/${params.slug}` }],
       scripts: p

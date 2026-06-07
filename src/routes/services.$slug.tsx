@@ -20,6 +20,9 @@ export const Route = createFileRoute("/services/$slug")({
     const description = s?.seo.description ?? "Services by NexaStudio.";
     const url = `/services/${params.slug}`;
     const ogImage = `/og/services-${params.slug}.jpg`;
+    const imageAlt = s
+      ? `${s.short} by NexaStudio — ${s.tagline ?? s.seo.description}. Get a free quote in 24 hours.`
+      : "NexaStudio services — Get a free quote in 24 hours.";
     return {
       meta: [
         { title },
@@ -32,11 +35,12 @@ export const Route = createFileRoute("/services/$slug")({
         { property: "og:image", content: ogImage },
         { property: "og:image:width", content: "1200" },
         { property: "og:image:height", content: "630" },
-        { property: "og:image:alt", content: title },
+        { property: "og:image:alt", content: imageAlt },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: title },
         { name: "twitter:description", content: description },
         { name: "twitter:image", content: ogImage },
+        { name: "twitter:image:alt", content: imageAlt },
       ],
       links: [{ rel: "canonical", href: url }],
       scripts: s

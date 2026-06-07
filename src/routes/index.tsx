@@ -34,10 +34,11 @@ export const Route = createFileRoute("/")({
       { property: "og:image", content: "/og/home.jpg" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "NexaStudio — Digital experiences that convert" },
+      { property: "og:image:alt", content: "NexaStudio — Digital experiences that convert. Start a project with our senior design & engineering team." },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },
       { name: "twitter:image", content: "/og/home.jpg" },
+      { name: "twitter:image:alt", content: "NexaStudio — Digital experiences that convert. Start a project with our senior design & engineering team." },
     ],
     links: [{ rel: "canonical", href: "/" }],
     scripts: [
