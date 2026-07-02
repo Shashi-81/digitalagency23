@@ -130,7 +130,7 @@ export function Navbar() {
                                     key={c.label}
                                     to={c.to}
                                     params={c.params as any}
-                                    onClick={() => setServicesOpen(false)}
+                                    onClick={closeMenus}
                                     className="group flex flex-col gap-0.5 rounded-xl px-3 py-2.5 hover:bg-foreground/5 transition-colors"
                                     activeProps={{ className: "bg-foreground/5" }}
                                   >
@@ -146,7 +146,7 @@ export function Navbar() {
                               <Link
                                 to="/"
                                 hash="services"
-                                onClick={() => setServicesOpen(false)}
+                                onClick={handleNav("/", "services")}
                                 className="mt-1 flex items-center justify-between rounded-xl px-3 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-foreground/5 transition-colors"
                               >
                                 All services overview
@@ -165,6 +165,7 @@ export function Navbar() {
                     <Link
                       to={item.to!}
                       hash={item.hash}
+                      onClick={handleNav(item.to, item.hash)}
                       className={`px-4 py-2 text-sm transition-colors ${
                         isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
                       }`}
@@ -174,6 +175,7 @@ export function Navbar() {
                   </li>
                 );
               })}
+
             </ul>
 
             <div className="flex items-center gap-2">
