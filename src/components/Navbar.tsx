@@ -46,6 +46,34 @@ export function Navbar() {
     document.body.style.overflow = open ? "hidden" : "";
   }, [open]);
 
+  const closeMenus = () => {
+    setOpen(false);
+    setServicesOpen(false);
+    setMobileServicesOpen(false);
+  };
+
+  const scrollToHash = (hash: string) => {
+    const el = document.getElementById(hash);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  const handleNav = (to?: string, hash?: string) => (e: React.MouseEvent) => {
+    closeMenus();
+    if (!hash) return;
+    // Same-page hash: prevent router re-render, just smooth-scroll.
+    if (to === "/" && pathname === "/") {
+      e.preventDefault();
+      scrollToHash(hash);
+      history.replaceState(null, "", `#${hash}`);
+      return;
+    }
+    // Cross-route hash: let router navigate, then scroll once mounted.
+    if (to === "/" && pathname !== "/") {
+      window.setTimeout(() => scrollToHash(hash), 260);
+    }
+  };
+
+
   return (
     <>
       <header
