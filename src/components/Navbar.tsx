@@ -46,6 +46,34 @@ export function Navbar() {
     document.body.style.overflow = open ? "hidden" : "";
   }, [open]);
 
+  const closeMenus = () => {
+    setOpen(false);
+    setServicesOpen(false);
+    setMobileServicesOpen(false);
+  };
+
+  const scrollToHash = (hash: string) => {
+    const el = document.getElementById(hash);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  const handleNav = (to?: string, hash?: string) => (e: React.MouseEvent) => {
+    closeMenus();
+    if (!hash) return;
+    // Same-page hash: prevent router re-render, just smooth-scroll.
+    if (to === "/" && pathname === "/") {
+      e.preventDefault();
+      scrollToHash(hash);
+      history.replaceState(null, "", `#${hash}`);
+      return;
+    }
+    // Cross-route hash: let router navigate, then scroll once mounted.
+    if (to === "/" && pathname !== "/") {
+      window.setTimeout(() => scrollToHash(hash), 260);
+    }
+  };
+
+
   return (
     <>
       <header
@@ -102,7 +130,7 @@ export function Navbar() {
                                     key={c.label}
                                     to={c.to}
                                     params={c.params as any}
-                                    onClick={() => setServicesOpen(false)}
+                                    onClick={closeMenus}
                                     className="group flex flex-col gap-0.5 rounded-xl px-3 py-2.5 hover:bg-foreground/5 transition-colors"
                                     activeProps={{ className: "bg-foreground/5" }}
                                   >
@@ -118,7 +146,7 @@ export function Navbar() {
                               <Link
                                 to="/"
                                 hash="services"
-                                onClick={() => setServicesOpen(false)}
+                                onClick={handleNav("/", "services")}
                                 className="mt-1 flex items-center justify-between rounded-xl px-3 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-foreground/5 transition-colors"
                               >
                                 All services overview
@@ -137,6 +165,7 @@ export function Navbar() {
                     <Link
                       to={item.to!}
                       hash={item.hash}
+                      onClick={handleNav(item.to, item.hash)}
                       className={`px-4 py-2 text-sm transition-colors ${
                         isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
                       }`}
@@ -146,11 +175,13 @@ export function Navbar() {
                   </li>
                 );
               })}
+
             </ul>
 
             <div className="flex items-center gap-2">
               <Link
                 to="/hire-us"
+                onClick={closeMenus}
                 className="hidden lg:inline-flex items-center gap-1.5 rounded-full bg-primary text-primary-foreground pl-5 pr-4 py-2.5 text-sm font-medium hover:shadow-[0_0_30px_-5px_var(--primary)] transition-shadow"
               >
                 Start a Project <ArrowUpRight className="h-4 w-4" />
@@ -225,7 +256,7 @@ export function Navbar() {
                                   <Link
                                     to={c.to}
                                     params={c.params as any}
-                                    onClick={() => setOpen(false)}
+                                    onClick={closeMenus}
                                     className="flex items-center justify-between py-3 pl-4 text-lg text-muted-foreground hover:text-primary"
                                   >
                                     {c.label}
@@ -241,7 +272,7 @@ export function Navbar() {
                       <Link
                         to={item.to!}
                         hash={item.hash}
-                        onClick={() => setOpen(false)}
+                        onClick={handleNav(item.to, item.hash)}
                         className="block py-4 font-display text-3xl font-bold hover:text-primary transition-colors"
                       >
                         {item.label}
@@ -253,7 +284,7 @@ export function Navbar() {
 
               <Link
                 to="/hire-us"
-                onClick={() => setOpen(false)}
+                onClick={closeMenus}
                 className="mt-10 w-full inline-flex items-center justify-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-4 text-base font-medium"
               >
                 Start a Project <ArrowUpRight className="h-5 w-5" />
