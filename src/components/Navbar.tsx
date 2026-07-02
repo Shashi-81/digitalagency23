@@ -256,7 +256,7 @@ export function Navbar() {
                                   <Link
                                     to={c.to}
                                     params={c.params as any}
-                                    onClick={() => setOpen(false)}
+                                    onClick={closeMenus}
                                     className="flex items-center justify-between py-3 pl-4 text-lg text-muted-foreground hover:text-primary"
                                   >
                                     {c.label}
@@ -272,7 +272,7 @@ export function Navbar() {
                       <Link
                         to={item.to!}
                         hash={item.hash}
-                        onClick={() => setOpen(false)}
+                        onClick={handleNav(item.to, item.hash)}
                         className="block py-4 font-display text-3xl font-bold hover:text-primary transition-colors"
                       >
                         {item.label}
