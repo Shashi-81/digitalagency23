@@ -181,6 +181,7 @@ export function Navbar() {
             <div className="flex items-center gap-2">
               <Link
                 to="/hire-us"
+                onClick={closeMenus}
                 className="hidden lg:inline-flex items-center gap-1.5 rounded-full bg-primary text-primary-foreground pl-5 pr-4 py-2.5 text-sm font-medium hover:shadow-[0_0_30px_-5px_var(--primary)] transition-shadow"
               >
                 Start a Project <ArrowUpRight className="h-4 w-4" />
