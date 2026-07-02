@@ -284,7 +284,7 @@ export function Navbar() {
 
               <Link
                 to="/hire-us"
-                onClick={() => setOpen(false)}
+                onClick={closeMenus}
                 className="mt-10 w-full inline-flex items-center justify-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-4 text-base font-medium"
               >
                 Start a Project <ArrowUpRight className="h-5 w-5" />
