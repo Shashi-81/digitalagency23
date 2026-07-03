@@ -146,6 +146,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.ico" },
+      { rel: "preconnect", href: "https://fonts.bunny.net" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.bunny.net/css?family=syne:700,800|dm-sans:400,500,600",
+      },
     ],
     scripts: [
       {
