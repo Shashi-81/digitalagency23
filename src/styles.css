@@ -2,7 +2,7 @@
 @source "../src";
 @import "tw-animate-css";
 
-@import url("https://fonts.bunny.net/css?family=syne:700,800|dm-sans:400,500,600");
+/* Fonts loaded via <link> in src/routes/__root.tsx — Lightning CSS cannot resolve remote @import URLs. */
 
 @custom-variant dark (&:is(.dark *));
 
