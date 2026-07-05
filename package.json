@@ -5,9 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
+    "predev": "node scripts/check-css.mjs",
     "validate:routes": "node scripts/validate-routes.mjs",
-    "prebuild": "node scripts/validate-routes.mjs",
-    "prebuild:dev": "node scripts/validate-routes.mjs",
+    "validate:css": "node scripts/check-css.mjs",
+    "prebuild": "node scripts/check-css.mjs && node scripts/validate-routes.mjs",
+    "prebuild:dev": "node scripts/check-css.mjs && node scripts/validate-routes.mjs",
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
