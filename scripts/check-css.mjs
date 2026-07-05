@@ -62,42 +62,8 @@ for (const { spec } of imports) {
   }
 }
 
-// ---------- 3. Real transform via Tailwind v4 compiler (same pipeline Vite uses) ----------
-try {
-  const { compile } = await import("@tailwindcss/node");
-  const compiler = await compile(src, {
-    base: dirname(CSS),
-    from: CSS,
-    loadStylesheet: async (id, base) => {
-      // Delegate to Tailwind's default resolution by throwing a clear error only
-      // for the cases we know produce blank screens.
-      if (/^https?:\/\//i.test(id)) {
-        throw new Error(
-          `Remote @import "${id}" — load via <link> in src/routes/__root.tsx head() instead.`,
-        );
-      }
-      // Fall back to filesystem read for relative/package imports.
-      const { readFile } = await import("node:fs/promises");
-      const { createRequire } = await import("node:module");
-      let resolved;
-      if (id.startsWith(".") || id.startsWith("/")) {
-        resolved = resolve(base, id);
-      } else {
-        resolved = createRequire(join(base, "_")).resolve(id);
-      }
-      return { base: dirname(resolved), content: await readFile(resolved, "utf8") };
-    },
-    loadModule: async () => {
-      throw new Error("loadModule not supported in pre-check");
-    },
-  });
-  compiler.build([]);
-} catch (e) {
-  fail(
-    `Tailwind/Lightning CSS failed to transform src/styles.css:\n` +
-      `    ${(e?.message ?? String(e)).split("\n").join("\n    ")}`,
-  );
-}
+
+
 
 
 // ---------- Report ----------
