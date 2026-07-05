@@ -2,16 +2,18 @@
 /**
  * CSS build/transform pre-check.
  *
- * Catches the class of errors that cause `GET /src/styles.css` to 500 in dev
- * (blank screen), BEFORE the dev server starts. Runs Lightning CSS's real
- * filesystem-based bundler against src/styles.css — the same resolver Tailwind
- * v4 uses — and also lints for the most common footguns with clearer messages.
+ * Catches the class of errors that make `GET /src/styles.css` return 500 in
+ * dev (blank screen), BEFORE the dev server starts. We've hit two so far:
+ *   1. Remote @import URL in src/styles.css (Lightning CSS can't fetch it).
+ *   2. @import for a package that isn't installed.
  *
- * Exits non-zero with a human-readable explanation on failure.
+ * Both surface as opaque runtime errors after a blank screen. This script
+ * fails fast with a clear, actionable message.
  */
 import { readFileSync, existsSync } from "node:fs";
-import { dirname, join, resolve } from "node:path";
+import { join } from "node:path";
 import { fileURLToPath } from "node:url";
+
 
 const ROOT = fileURLToPath(new URL("..", import.meta.url));
 const CSS = join(ROOT, "src/styles.css");
