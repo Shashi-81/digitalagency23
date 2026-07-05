@@ -92,23 +92,20 @@ for (const { spec } of imports) {
 // ---------- 4. Real transform via Lightning CSS ----------
 try {
   const { bundle } = await import("lightningcss");
+  const { createRequire } = await import("node:module");
   bundle({
     filename: CSS,
     minify: false,
-    // Match Tailwind v4 defaults; we only need to catch parse/resolve errors.
     resolver: {
       resolve(specifier, from) {
-        // Let Lightning resolve relative paths itself by returning null-ish?
-        // Its default resolver handles fs paths; for bare specifiers, resolve via node_modules.
         if (specifier.startsWith(".") || specifier.startsWith("/")) {
           return resolve(dirname(from), specifier);
         }
-        // Bare package: point at its package.json "style"/"main" or index.css
         try {
-          const require = (await import("node:module")).createRequire(from);
-          return require.resolve(specifier);
+          return createRequire(from).resolve(specifier);
         } catch {
-          return specifier;
+          // Fall back to node_modules/<pkg> — we already linted existence above.
+          return join(ROOT, "node_modules", specifier);
         }
       },
     },
