@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
+    "prepare": "git config core.hooksPath .githooks 2>/dev/null || true",
     "predev": "node scripts/check-css.mjs",
     "validate:routes": "node scripts/validate-routes.mjs",
     "validate:css": "node scripts/check-css.mjs",
