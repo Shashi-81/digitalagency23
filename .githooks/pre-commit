@@ -1,0 +1,18 @@
+#!/usr/bin/env sh
+# Pre-commit hook: block commits that would break the dev server's CSS build.
+# Managed via `core.hooksPath = .githooks` (set by the `prepare` npm script).
+
+# Only run when src/styles.css (or the check script itself) is staged.
+changed=$(git diff --cached --name-only --diff-filter=ACMR)
+case "$changed" in
+  *src/styles.css*|*scripts/check-css.mjs*) ;;
+  *) exit 0 ;;
+esac
+
+echo "→ Running CSS pre-check (src/styles.css)…"
+if ! node scripts/check-css.mjs; then
+  echo ""
+  echo "✖ Commit blocked: CSS pre-check failed. Fix the errors above, then re-commit."
+  echo "  (Bypass with --no-verify only if you know what you're doing.)"
+  exit 1
+fi
