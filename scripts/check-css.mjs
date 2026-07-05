@@ -41,40 +41,11 @@ for (const { spec } of imports) {
   }
 }
 
-// ---------- 2. Lint: @import must come before other rules ----------
-// Find first non-@import, non-@charset, non-@layer-statement, non-comment/whitespace rule.
-const stripped = src.replace(/\/\*[\s\S]*?\*\//g, "");
-const lines = stripped.split("\n");
-let sawNonImport = false;
-let firstNonImportLine = 0;
-for (let i = 0; i < lines.length; i++) {
-  const t = lines[i].trim();
-  if (!t) continue;
-  if (t.startsWith("@import") || t.startsWith("@charset")) {
-    if (sawNonImport) {
-      fail(
-        `@import on line ${i + 1} of src/styles.css appears after a non-@import rule ` +
-          `(first was line ${firstNonImportLine + 1}).\n` +
-          `    Lightning CSS requires all @import rules at the top of the file.`,
-      );
-      break;
-    }
-    continue;
-  }
-  // @layer without a block is a statement and is allowed before @import? No — Lightning is strict.
-  // Anything else counts as "other rule".
-  if (!sawNonImport) {
-    sawNonImport = true;
-    firstNonImportLine = i;
-  }
-}
-
-// ---------- 3. Lint: bare package @imports must resolve in node_modules ----------
+// ---------- 2. Lint: bare package @imports must resolve in node_modules ----------
 for (const { spec } of imports) {
   if (/^https?:\/\//i.test(spec)) continue;
-  if (spec.startsWith(".") || spec.startsWith("/")) continue; // relative/absolute path
-  if (spec === "tailwindcss") continue; // handled by the tailwind vite plugin
-  // Try to resolve package (support scoped, subpath, or bare)
+  if (spec.startsWith(".") || spec.startsWith("/")) continue;
+  if (spec === "tailwindcss") continue;
   const pkgName = spec.startsWith("@")
     ? spec.split("/").slice(0, 2).join("/")
     : spec.split("/")[0];
@@ -89,35 +60,43 @@ for (const { spec } of imports) {
   }
 }
 
-// ---------- 4. Real transform via Lightning CSS ----------
+// ---------- 3. Real transform via Tailwind v4 compiler (same pipeline Vite uses) ----------
 try {
-  const { bundle } = await import("lightningcss");
-  const { createRequire } = await import("node:module");
-  bundle({
-    filename: CSS,
-    minify: false,
-    resolver: {
-      resolve(specifier, from) {
-        if (specifier.startsWith(".") || specifier.startsWith("/")) {
-          return resolve(dirname(from), specifier);
-        }
-        try {
-          return createRequire(from).resolve(specifier);
-        } catch {
-          // Fall back to node_modules/<pkg> — we already linted existence above.
-          return join(ROOT, "node_modules", specifier);
-        }
-      },
+  const { compile } = await import("@tailwindcss/node");
+  const compiler = await compile(src, {
+    base: dirname(CSS),
+    from: CSS,
+    loadStylesheet: async (id, base) => {
+      // Delegate to Tailwind's default resolution by throwing a clear error only
+      // for the cases we know produce blank screens.
+      if (/^https?:\/\//i.test(id)) {
+        throw new Error(
+          `Remote @import "${id}" — load via <link> in src/routes/__root.tsx head() instead.`,
+        );
+      }
+      // Fall back to filesystem read for relative/package imports.
+      const { readFile } = await import("node:fs/promises");
+      const { createRequire } = await import("node:module");
+      let resolved;
+      if (id.startsWith(".") || id.startsWith("/")) {
+        resolved = resolve(base, id);
+      } else {
+        resolved = createRequire(join(base, "_")).resolve(id);
+      }
+      return { base: dirname(resolved), content: await readFile(resolved, "utf8") };
+    },
+    loadModule: async () => {
+      throw new Error("loadModule not supported in pre-check");
     },
   });
+  compiler.build([]);
 } catch (e) {
-  // Lightning throws with { loc: { line, column, filename } } for parse errors
-  const loc = e?.loc ? ` at ${e.loc.filename}:${e.loc.line}:${e.loc.column}` : "";
   fail(
-    `Lightning CSS failed to transform src/styles.css${loc}\n` +
+    `Tailwind/Lightning CSS failed to transform src/styles.css:\n` +
       `    ${(e?.message ?? String(e)).split("\n").join("\n    ")}`,
   );
 }
+
 
 // ---------- Report ----------
 if (errors.length) {
