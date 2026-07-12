@@ -20,11 +20,16 @@ export function Footer() {
           links={[
             { label: "UI/UX Design", to: "/services/$slug", params: { slug: "ui-ux-design" } },
             { label: "Web Development", to: "/services/$slug", params: { slug: "web-development" } },
+            { label: "Mobile Apps", to: "/services/$slug", params: { slug: "mobile-app-development" } },
             { label: "Brand Identity", to: "/services/$slug", params: { slug: "brand-identity" } },
             { label: "SEO & Marketing", to: "/services/$slug", params: { slug: "seo-digital-marketing" } },
             { label: "AI & Automation", to: "/services/$slug", params: { slug: "ai-integration" } },
+            { label: "Performance Marketing", to: "/services/$slug", params: { slug: "performance-marketing" } },
+            { label: "Marketing Automation", to: "/services/$slug", params: { slug: "marketing-automation" } },
+            { label: "Content Production", to: "/services/$slug", params: { slug: "content-production" } },
           ]}
         />
+
         <FooterCol
           title="Company"
           links={[
