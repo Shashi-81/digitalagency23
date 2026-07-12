@@ -37,6 +37,9 @@ const G = {
   amber: "linear-gradient(135deg, oklch(0.25 0.06 60), oklch(0.85 0.2 60))",
   ocean: "linear-gradient(135deg, oklch(0.18 0.04 240), oklch(0.6 0.18 200))",
   rose: "linear-gradient(135deg, oklch(0.22 0.06 20), oklch(0.78 0.18 20))",
+  emerald: "linear-gradient(135deg, oklch(0.22 0.06 160), oklch(0.78 0.18 160))",
+  magenta: "linear-gradient(135deg, oklch(0.22 0.08 340), oklch(0.78 0.2 340))",
+  indigo: "linear-gradient(135deg, oklch(0.2 0.08 275), oklch(0.72 0.17 280))",
 };
 
 export const SERVICES: Service[] = [
@@ -403,7 +406,7 @@ export const SERVICES: Service[] = [
       { q: "How do you measure success?", a: "Rankings, organic traffic, leads generated, cost per acquisition and revenue — never vanity metrics like raw impressions." },
       { q: "Do you write the content too?", a: "Yes — our in-house SEO writers create keyword-optimized, engaging content. You review and approve before publishing." },
     ],
-    related: ["web-development", "ai-integration", "brand-identity"],
+    related: ["performance-marketing", "marketing-automation", "content-production"],
   },
   {
     slug: "ai-integration",
@@ -478,6 +481,231 @@ export const SERVICES: Service[] = [
       { q: "How do you prevent AI hallucinations?", a: "We use RAG (Retrieval Augmented Generation), grounding prompts, output validation layers and human-in-the-loop checks for critical workflows." },
     ],
     related: ["web-development", "mobile-app-development", "seo-digital-marketing"],
+  },
+  {
+    slug: "performance-marketing",
+    short: "Performance Marketing",
+    navTitle: "Performance Marketing",
+    tagline: "Paid campaigns wired to revenue, not vanity metrics.",
+    seo: {
+      title: "Performance Marketing Agency | Google, Meta & LinkedIn Ads — NexaStudio",
+      description:
+        "ROI-focused performance marketing across Google Ads, Meta and LinkedIn. Full-funnel campaign strategy, landing page optimization and attribution — tied to revenue, not clicks.",
+      keywords:
+        "performance marketing agency, Google Ads management, Meta Ads agency, LinkedIn Ads, PPC agency, paid media, ROAS, conversion tracking, B2B paid ads",
+    },
+    hero: {
+      eyebrow: "— Performance Marketing",
+      headline: "Paid ads that print",
+      headlineAccent: "pipeline, not impressions.",
+      sub: "We run full-funnel Google, Meta and LinkedIn campaigns engineered for revenue — with clean attribution, landing pages that convert and weekly optimizations that compound.",
+      badges: ["📈 ROAS-First", "🎯 Full-Funnel Attribution", "🧪 Weekly Iteration"],
+    },
+    gradient: G.emerald,
+    overview: {
+      body: [
+        "Most paid media dies on the vine because clicks are treated as the outcome. We build campaigns backwards from revenue — the offer, the landing page, the attribution model, the audience — so every dollar has a job and a receipt.",
+        "One senior team owns strategy, creative, tracking and optimization. No handoffs, no vanity dashboards — just a clean line from ad spend to bookings.",
+      ],
+      stats: [
+        { value: "4.7×", label: "Avg. Blended ROAS" },
+        { value: "-38%", label: "Avg. CAC Reduction" },
+        { value: "$12M+", label: "Ad Spend Managed" },
+      ],
+    },
+    features: [
+      { icon: "🎯", title: "Campaign Strategy & Audience Research", desc: "Offer design, ICP mapping, competitor teardown and funnel plan." },
+      { icon: "🔎", title: "Google Ads Management", desc: "Search, Display, Shopping and PMax with ROI-driven bidding." },
+      { icon: "📸", title: "Meta Ads (Instagram/Facebook)", desc: "Creative testing frameworks, retargeting and DPA at scale." },
+      { icon: "💼", title: "LinkedIn Ads for B2B", desc: "ABM, lead gen forms and thought-leadership sponsored content." },
+      { icon: "🧲", title: "Landing Page & Funnel Optimization", desc: "Purpose-built pages, offer tests and A/B experimentation." },
+      { icon: "📡", title: "Conversion Tracking & Attribution", desc: "GA4, server-side tagging, CAPI, offline conversions." },
+      { icon: "📊", title: "Monthly Reporting & Optimization", desc: "ROAS, CAC and pipeline dashboards — never vanity metrics." },
+      { icon: "🎬", title: "Ad Creative Production", desc: "Static, motion and UGC-style creative on a weekly cadence." },
+    ],
+    process: [
+      { title: "Audit & Strategy", window: "Week 1", desc: "Account audit, ICP, offer sharpening and channel plan." },
+      { title: "Tracking Foundations", window: "Week 2", desc: "GA4, server-side tagging, CAPI and CRM attribution wired." },
+      { title: "Launch Sprint", window: "Week 3–4", desc: "Campaigns, creatives and landing pages shipped live." },
+      { title: "Test & Iterate", window: "Weekly", desc: "Creative rotation, bid strategy tuning, audience refinement." },
+      { title: "Scale & Report", window: "Monthly", desc: "Compound winners, retire losers, review pipeline impact." },
+    ],
+    tools: [
+      { group: "Ads", items: ["Google Ads", "Meta Ads Manager", "LinkedIn Campaign Manager", "TikTok Ads"] },
+      { group: "Tracking", items: ["GA4", "GTM Server-Side", "Meta CAPI", "Segment"] },
+      { group: "Landing Pages", items: ["Framer", "Webflow", "Unbounce", "Instapage"] },
+      { group: "Reporting", items: ["Looker Studio", "HubSpot", "Triple Whale"] },
+    ],
+    result: {
+      client: "NorthPeak SaaS",
+      quote:
+        "In 90 days we cut NorthPeak's blended CAC by 41% and grew qualified pipeline 3.2× — with the same ad budget — by rebuilding attribution and killing the campaigns that only looked good on the surface.",
+    },
+    pricing: [
+      { tier: "Single-Channel Management", from: "$1,500/mo" },
+      { tier: "Multi-Channel Growth", from: "$3,000/mo" },
+      { tier: "Full-Funnel Performance", from: "$5,500/mo" },
+      { tier: "One-time Account Audit", from: "$750" },
+    ],
+    faqs: [
+      { q: "Is there a minimum ad spend?", a: "We recommend at least $3K/month in media to see meaningful signal, but we've launched with less for validation phases." },
+      { q: "Do you handle creative production?", a: "Yes — static, motion and UGC-style ad creative is included in growth and full-funnel retainers on a weekly cadence." },
+      { q: "How is this different from a typical PPC agency?", a: "We start with the offer, tracking and landing page — not the ad account. Campaigns are only as good as the funnel underneath them." },
+      { q: "How do you report on results?", a: "You get a Looker Studio dashboard tied to your CRM — ROAS, CAC, MQL, SQL and pipeline — plus a monthly review call." },
+      { q: "How fast will I see results?", a: "Meaningful signal in 2–4 weeks; compounding gains from month two onward as creative and audience data accumulate." },
+      { q: "Do you require long contracts?", a: "No — we work month to month after an initial 90-day setup and optimization sprint." },
+    ],
+    related: ["seo-digital-marketing", "marketing-automation", "content-production"],
+  },
+  {
+    slug: "marketing-automation",
+    short: "Marketing Automation",
+    navTitle: "Marketing Automation",
+    tagline: "Lifecycle marketing on Email and WhatsApp — global and local.",
+    seo: {
+      title: "Marketing Automation | Email & WhatsApp Lifecycle Marketing — NexaStudio",
+      description:
+        "Email and WhatsApp marketing automation for global and India-facing businesses. Nurture sequences, broadcast campaigns, CRM workflows, segmentation and deliverability — built to drive repeat revenue.",
+      keywords:
+        "marketing automation agency, email marketing agency, WhatsApp marketing India, lifecycle marketing, CRM automation, Klaviyo agency, HubSpot automation, WhatsApp Business API",
+    },
+    hero: {
+      eyebrow: "— Marketing Automation",
+      headline: "Turn one-time buyers into",
+      headlineAccent: "lifetime revenue.",
+      sub: "Email-first for global teams. WhatsApp-first for India and local businesses. We build lifecycle systems that engage, nurture and convert customers on repeat — automatically.",
+      badges: ["📧 Email + WhatsApp", "🌍 Global & India-Ready", "🔁 Lifecycle Systems"],
+    },
+    gradient: G.magenta,
+    overview: {
+      body: [
+        "Acquisition gets you a customer once. Automation keeps them buying for years. We design lifecycle programs across email and WhatsApp — the two channels people actually open — so every subscriber, lead and customer moves through a system, not a spreadsheet.",
+        "For international teams we lead with email — Klaviyo, HubSpot, Customer.io. For India-facing and local businesses we lead with WhatsApp — broadcast campaigns, automated support flows, catalog and order updates through the official Business API.",
+      ],
+      stats: [
+        { value: "38%", label: "Avg. Revenue from Automations" },
+        { value: "5.4×", label: "Repeat Purchase Lift" },
+        { value: "98%", label: "WhatsApp Open Rate" },
+      ],
+    },
+    features: [
+      { icon: "📧", title: "Email Marketing", desc: "Newsletters, nurture sequences and lifecycle campaigns end-to-end." },
+      { icon: "💬", title: "WhatsApp Marketing", desc: "Broadcast campaigns, catalog and order updates on the Business API." },
+      { icon: "🤖", title: "Automated Support Flows", desc: "WhatsApp chatbots for FAQs, order status and lead qualification." },
+      { icon: "🔗", title: "CRM & Workflow Setup", desc: "HubSpot, Klaviyo, Customer.io and WATI/Interakt wired to your stack." },
+      { icon: "🧩", title: "Segmentation & Personalization", desc: "Behavior, lifecycle stage and RFM-based dynamic segments." },
+      { icon: "🧪", title: "A/B Testing & Deliverability", desc: "Subject line tests, warm-up, DKIM/SPF/DMARC, inbox placement." },
+      { icon: "🛒", title: "Ecommerce Flows", desc: "Welcome, browse abandon, cart abandon, post-purchase, winback." },
+      { icon: "📊", title: "Attribution & Reporting", desc: "Revenue per send, LTV lift and channel-level lifecycle dashboards." },
+    ],
+    process: [
+      { title: "Audit & Mapping", window: "Week 1", desc: "Current stack, lists, deliverability and lifecycle gap analysis." },
+      { title: "Strategy & Segments", window: "Week 2", desc: "Program design, segment tree, offer and calendar plan." },
+      { title: "Build & Integrate", window: "Week 3–5", desc: "Flows, templates, WhatsApp templates approved and CRM wired." },
+      { title: "Launch & Warm-Up", window: "Week 6", desc: "Staged rollout with deliverability monitoring and QA." },
+      { title: "Optimize Monthly", window: "Ongoing", desc: "Tests, calendar execution and reporting on revenue impact." },
+    ],
+    tools: [
+      { group: "Email", items: ["Klaviyo", "HubSpot", "Customer.io", "Mailchimp", "Postmark"] },
+      { group: "WhatsApp", items: ["WhatsApp Business API", "WATI", "Interakt", "Gupshup"] },
+      { group: "CRM & CDP", items: ["HubSpot", "Salesforce", "Segment", "RudderStack"] },
+      { group: "Deliverability", items: ["Postmaster Tools", "GlockApps", "MXToolbox"] },
+    ],
+    result: {
+      client: "Kaya Wellness (India)",
+      quote:
+        "NexaStudio rebuilt Kaya's lifecycle across email and WhatsApp — automations now drive 42% of monthly revenue, with WhatsApp broadcasts opening at 96% and reactivating dormant customers we'd written off.",
+    },
+    pricing: [
+      { tier: "Email Foundations", from: "$1,200/mo" },
+      { tier: "WhatsApp Automation (India)", from: "$1,000/mo" },
+      { tier: "Full Lifecycle (Email + WhatsApp)", from: "$2,800/mo" },
+      { tier: "One-time Flow Build", from: "$1,500" },
+    ],
+    faqs: [
+      { q: "Do you work with both global and India-based businesses?", a: "Yes — we lead with email for international teams and with WhatsApp for India-facing and local businesses. Most clients use both." },
+      { q: "Do I need the official WhatsApp Business API?", a: "For broadcast, automation and catalog features, yes. We handle onboarding through providers like WATI, Interakt or Gupshup and get message templates approved." },
+      { q: "Which email platform do you recommend?", a: "Klaviyo for ecommerce, HubSpot for B2B, Customer.io for product-led SaaS. We'll recommend based on your stack — no lock-in." },
+      { q: "Can you fix our deliverability issues?", a: "Yes — DKIM/SPF/DMARC, domain warm-up, list hygiene and content audits are standard first steps if inbox placement is poor." },
+      { q: "How is WhatsApp marketing different from spam?", a: "The Business API only sends to opted-in users using pre-approved templates. Done right, it's the highest-engagement channel available — done wrong, your number gets blocked." },
+      { q: "How quickly will we see revenue impact?", a: "Core ecommerce flows (welcome, abandon, post-purchase) typically pay back within 60 days once live." },
+    ],
+    related: ["performance-marketing", "seo-digital-marketing", "content-production"],
+  },
+  {
+    slug: "content-production",
+    short: "Content Production",
+    navTitle: "Content Production",
+    tagline: "Premium content systems — motion, video and design on retainer.",
+    seo: {
+      title: "Content Production | Motion, Video & Design Systems — NexaStudio",
+      description:
+        "Premium content production for brands that publish weekly. Short-form video editing, motion graphics, brand films and ongoing graphic design — delivered as a system, not one-offs.",
+      keywords:
+        "content production agency, motion design, video editing agency, reels editing, brand video, motion graphics, graphic design retainer, social media creative",
+    },
+    hero: {
+      eyebrow: "— Content Production",
+      headline: "A content engine, not",
+      headlineAccent: "a freelancer marketplace.",
+      sub: "Short-form video, motion graphics, brand films and ongoing graphic design — produced as a system with a shared calendar, templates and quality bar you can actually scale.",
+      badges: ["🎬 Motion + Video", "🖌️ Design on Retainer", "📅 Weekly Output"],
+    },
+    gradient: G.indigo,
+    overview: {
+      body: [
+        "Most brands are drowning in one-off design requests and slow-turn video edits. We replace that chaos with a content system: a shared calendar, reusable templates, a defined visual language and a senior team that ships weekly — not eventually.",
+        "Motion designers, video editors and graphic designers work as one unit against your brand guidelines. The result: premium, on-brand output at the volume modern channels demand.",
+      ],
+      stats: [
+        { value: "40+", label: "Assets Shipped / Month" },
+        { value: "48 hrs", label: "Avg. Turnaround" },
+        { value: "1", label: "Dedicated Team" },
+      ],
+    },
+    features: [
+      { icon: "🎬", title: "Short-Form Video Editing", desc: "Reels, TikToks, YouTube Shorts and paid social ads." },
+      { icon: "🎞️", title: "Case Study & Brand Videos", desc: "Testimonials, product films and long-form brand stories." },
+      { icon: "✨", title: "Motion Graphics & Animation", desc: "Explainer animations, product motion, kinetic typography." },
+      { icon: "🖌️", title: "Ongoing Graphic Design", desc: "Social creatives, ad banners, landing page visuals on retainer." },
+      { icon: "📊", title: "Presentation Design", desc: "Investor decks, sales decks, keynote and Google Slides systems." },
+      { icon: "📅", title: "Content Calendars", desc: "Monthly plan, briefs and asset scheduling across channels." },
+      { icon: "🧩", title: "Template & Asset Systems", desc: "Reusable After Effects, Premiere and Figma templates you own." },
+      { icon: "🔁", title: "Iteration & Versioning", desc: "Formats, aspect ratios and localized cuts for every channel." },
+    ],
+    process: [
+      { title: "Brand & Content Audit", window: "Week 1", desc: "Existing assets, voice, competitors and channel priorities." },
+      { title: "System Design", window: "Week 2", desc: "Templates, style frames, motion language and calendar built." },
+      { title: "First Production Sprint", window: "Week 3–4", desc: "Initial batch of videos, motion pieces and design assets." },
+      { title: "Weekly Delivery Cadence", window: "Ongoing", desc: "Briefs in, drafts out, feedback loop, published assets shipped." },
+      { title: "Quarterly System Review", window: "Every 90 days", desc: "Refresh templates, retire what's tired, double down on winners." },
+    ],
+    tools: [
+      { group: "Video & Motion", items: ["After Effects", "Premiere Pro", "DaVinci Resolve", "Cinema 4D"] },
+      { group: "Design", items: ["Figma", "Illustrator", "Photoshop"] },
+      { group: "Workflow", items: ["Frame.io", "Notion", "Dropbox Replay"] },
+      { group: "Stock & Sound", items: ["Artlist", "Envato", "Epidemic Sound"] },
+    ],
+    result: {
+      client: "Vera Athletics",
+      quote:
+        "We replaced Vera's rotating cast of freelancers with a single content system — 60+ assets a month, on-brand, with 48-hour turnaround. Paid social CTR jumped 2.1× within the first quarter.",
+    },
+    pricing: [
+      { tier: "Graphic Design Retainer", from: "$1,200/mo" },
+      { tier: "Video Editing Retainer", from: "$1,800/mo" },
+      { tier: "Full Content System", from: "$3,500/mo" },
+      { tier: "Brand Film (one-time)", from: "$3,000" },
+    ],
+    faqs: [
+      { q: "How is a retainer different from hiring freelancers?", a: "A retainer gives you a dedicated senior team, a shared calendar, brand-consistent templates and a defined turnaround — instead of chasing individual freelancers per task." },
+      { q: "What's the typical turnaround?", a: "Short-form edits and design assets: 48 hours. Motion pieces: 3–5 days. Brand films: 2–4 weeks depending on scope." },
+      { q: "Do you provide raw footage or scripting?", a: "We can either edit footage you provide or handle scripting, direction and remote-recorded shoots end-to-end." },
+      { q: "Do we own the source files and templates?", a: "Yes — all After Effects, Premiere and Figma source files are yours, plus a reusable template library at the end of every quarter." },
+      { q: "Which channels do you optimize for?", a: "Instagram, TikTok, YouTube (Shorts and long-form), LinkedIn and paid social — with correct aspect ratios and safe zones for each." },
+      { q: "Can you scale output up during launches?", a: "Yes — retainers can flex up for launches, campaigns and events with advance notice." },
+    ],
+    related: ["performance-marketing", "brand-identity", "marketing-automation"],
   },
 ];
 
