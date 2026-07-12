@@ -406,7 +406,7 @@ export const SERVICES: Service[] = [
       { q: "How do you measure success?", a: "Rankings, organic traffic, leads generated, cost per acquisition and revenue — never vanity metrics like raw impressions." },
       { q: "Do you write the content too?", a: "Yes — our in-house SEO writers create keyword-optimized, engaging content. You review and approve before publishing." },
     ],
-    related: ["web-development", "ai-integration", "brand-identity"],
+    related: ["performance-marketing", "marketing-automation", "content-production"],
   },
   {
     slug: "ai-integration",
