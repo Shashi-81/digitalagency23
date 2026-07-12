@@ -37,6 +37,9 @@ const G = {
   amber: "linear-gradient(135deg, oklch(0.25 0.06 60), oklch(0.85 0.2 60))",
   ocean: "linear-gradient(135deg, oklch(0.18 0.04 240), oklch(0.6 0.18 200))",
   rose: "linear-gradient(135deg, oklch(0.22 0.06 20), oklch(0.78 0.18 20))",
+  emerald: "linear-gradient(135deg, oklch(0.22 0.06 160), oklch(0.78 0.18 160))",
+  magenta: "linear-gradient(135deg, oklch(0.22 0.08 340), oklch(0.78 0.2 340))",
+  indigo: "linear-gradient(135deg, oklch(0.2 0.08 275), oklch(0.72 0.17 280))",
 };
 
 export const SERVICES: Service[] = [
