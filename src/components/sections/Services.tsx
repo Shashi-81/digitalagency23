@@ -1,4 +1,4 @@
-import { Palette, Code2, Smartphone, Sparkles, TrendingUp, BrainCircuit, ArrowUpRight } from "lucide-react";
+import { Palette, Code2, Smartphone, Sparkles, TrendingUp, BrainCircuit, Target, MessageCircle, Clapperboard, ArrowUpRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { Reveal, StaggerGroup, StaggerItem } from "../ui-extra/Reveal";
 
@@ -9,6 +9,9 @@ const SERVICES = [
   { slug: "brand-identity", icon: Sparkles, title: "Brand & Design Systems", desc: "Identity, typography, and token systems built to scale." },
   { slug: "seo-digital-marketing", icon: TrendingUp, title: "SEO & Digital Marketing", desc: "Content, performance and search wired to revenue." },
   { slug: "ai-integration", icon: BrainCircuit, title: "AI Integration & Automation", desc: "LLM features, agents, and workflows that compound." },
+  { slug: "performance-marketing", icon: Target, title: "Performance Marketing", desc: "Google, Meta and LinkedIn ads engineered for ROAS, not clicks." },
+  { slug: "marketing-automation", icon: MessageCircle, title: "Marketing Automation", desc: "Email and WhatsApp lifecycle systems — global and India-ready." },
+  { slug: "content-production", icon: Clapperboard, title: "Content Production", desc: "Motion, video and design on retainer — a system, not one-offs." },
 ];
 
 export function Services() {
@@ -21,9 +24,10 @@ export function Services() {
             Everything you need, <span className="text-gradient">under one roof.</span>
           </h2>
           <p className="mt-6 max-w-xl text-muted-foreground">
-            Six tightly-integrated practices. One senior team. Zero handoffs to agencies that don't talk to each other.
+            Nine tightly-integrated practices. One senior team. Zero handoffs to agencies that don't talk to each other.
           </p>
         </Reveal>
+
 
         <StaggerGroup className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-16">
           {SERVICES.map((s) => (
