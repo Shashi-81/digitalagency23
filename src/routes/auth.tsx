@@ -13,7 +13,7 @@ export const Route = createFileRoute("/auth")({
   component: AuthPage,
   head: () => ({
     meta: [
-      { title: "Sign in — NexaStudio" },
+      { title: "Sign in — Gipsm Technology" },
       { name: "robots", content: "noindex, nofollow" },
     ],
   }),
@@ -78,7 +78,7 @@ function AuthPage() {
         ← Back to site
       </Link>
       <h1 className="font-heading text-3xl">{mode === "signin" ? "Sign in" : "Create account"}</h1>
-      <p className="mt-2 text-sm text-fg/60">Admin access to manage NexaStudio projects.</p>
+      <p className="mt-2 text-sm text-fg/60">Admin access to manage Gipsm Technology projects.</p>
 
       <button
         onClick={handleGoogle}

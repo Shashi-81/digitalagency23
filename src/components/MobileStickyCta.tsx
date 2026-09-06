@@ -45,7 +45,7 @@ export function MobileStickyCta() {
               Start a Project <ArrowUpRight className="h-4 w-4" />
             </a>
             <a
-              href="https://cal.com/nexastudio/intro"
+              href="https://cal.com/gipsmtechnology/intro"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Book a call"

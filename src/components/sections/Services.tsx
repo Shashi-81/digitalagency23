@@ -3,15 +3,15 @@ import { Link } from "@tanstack/react-router";
 import { Reveal, StaggerGroup, StaggerItem } from "../ui-extra/Reveal";
 
 const SERVICES = [
-  { slug: "ui-ux-design", icon: Palette, title: "UI/UX Design", desc: "Interfaces that feel obvious — guided by research, not opinion." },
-  { slug: "web-development", icon: Code2, title: "Web Development", desc: "Production-grade React, edge-rendered and impossibly fast." },
-  { slug: "mobile-app-development", icon: Smartphone, title: "Mobile App Development", desc: "Native-feeling cross-platform apps your users won't put down." },
-  { slug: "brand-identity", icon: Sparkles, title: "Brand & Design Systems", desc: "Identity, typography, and token systems built to scale." },
-  { slug: "seo-digital-marketing", icon: TrendingUp, title: "SEO & Digital Marketing", desc: "Content, performance and search wired to revenue." },
-  { slug: "ai-integration", icon: BrainCircuit, title: "AI Integration & Automation", desc: "LLM features, agents, and workflows that compound." },
-  { slug: "performance-marketing", icon: Target, title: "Performance Marketing", desc: "Google, Meta and LinkedIn ads engineered for ROAS, not clicks." },
-  { slug: "marketing-automation", icon: MessageCircle, title: "Marketing Automation", desc: "Email and WhatsApp lifecycle systems — global and India-ready." },
-  { slug: "content-production", icon: Clapperboard, title: "Content Production", desc: "Motion, video and design on retainer — a system, not one-offs." },
+  { slug: "ui-ux-design", icon: Palette, title: "UI/UX Design", desc: "Research-led interfaces that make products clearer, smoother, and easier to buy from." },
+  { slug: "web-development", icon: Code2, title: "Web Development", desc: "Fast, secure, conversion-ready websites and web apps built for growth and scale." },
+  { slug: "mobile-app-development", icon: Smartphone, title: "Mobile App Development", desc: "Cross-platform experiences for iOS and Android that feel polished and reliable." },
+  { slug: "brand-identity", icon: Sparkles, title: "Brand & Design Systems", desc: "Positioning, identity, and visual systems that help businesses stand out with consistency." },
+  { slug: "seo-digital-marketing", icon: TrendingUp, title: "SEO & Digital Marketing", desc: "Organic traffic, content strategy, and growth systems designed to generate qualified demand." },
+  { slug: "ai-integration", icon: BrainCircuit, title: "AI Integration & Automation", desc: "Operational workflows and AI-powered experiences that reduce friction and increase productivity." },
+  { slug: "performance-marketing", icon: Target, title: "Performance Marketing", desc: "Google, Meta, and paid acquisition campaigns optimized for measurable ROI, not vanity clicks." },
+  { slug: "marketing-automation", icon: MessageCircle, title: "Marketing Automation", desc: "Lifecycle journeys, CRM workflows, and WhatsApp/email systems that move prospects faster." },
+  { slug: "content-production", icon: Clapperboard, title: "Content Production", desc: "Video, motion, and creative production that supports brand trust and conversion across channels." },
 ];
 
 export function Services() {

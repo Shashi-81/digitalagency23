@@ -21,9 +21,9 @@ const NAV: NavItem[] = [
       desc: s.tagline,
     })),
   },
-  { label: "Work", to: "/", hash: "work" },
+  { label: "Solutions", to: "/solutions" },
+  { label: "About", to: "/about" },
   { label: "Process", to: "/", hash: "process" },
-  { label: "Pricing", to: "/", hash: "pricing" },
   { label: "Resources", to: "/resources" },
   { label: "Contact", to: "/", hash: "contact" },
 ];
@@ -91,10 +91,9 @@ export function Navbar() {
           >
             <Link
               to="/"
-              className="flex items-center gap-2 font-display text-xl font-bold tracking-tight shrink-0"
+              className="flex items-center gap-2 shrink-0"
             >
-              Nexa<span className="text-primary">Studio</span>
-              <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_12px_var(--primary)]" />
+              <img src="/images/gipsmlo.png" alt="Gipsm Technology" className="h-14 w-auto object-contain" />
             </Link>
 
             <ul className="hidden lg:flex items-center gap-0.5">
@@ -121,9 +120,9 @@ export function Navbar() {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: 8 }}
                             transition={{ duration: 0.18 }}
-                            className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[520px]"
+                            className="absolute left-1/2 z-[70] -translate-x-1/2 top-full pt-3 w-[520px]"
                           >
-                            <div className="glass border border-border/60 rounded-2xl p-2 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.7)]">
+                            <div className="glass bg-background border border-border/80 rounded-2xl p-2 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.7)]">
                               <div className="grid grid-cols-2 gap-1">
                                 {item.children.map((c) => (
                                   <Link
@@ -184,7 +183,7 @@ export function Navbar() {
                 onClick={closeMenus}
                 className="hidden lg:inline-flex items-center gap-1.5 rounded-full bg-primary text-primary-foreground pl-5 pr-4 py-2.5 text-sm font-medium hover:shadow-[0_0_30px_-5px_var(--primary)] transition-shadow"
               >
-                Start a Project <ArrowUpRight className="h-4 w-4" />
+                Get a Free Consultation <ArrowUpRight className="h-4 w-4" />
               </Link>
 
               <button
@@ -208,8 +207,8 @@ export function Navbar() {
             className="fixed inset-0 z-[60] bg-background/98 backdrop-blur-2xl overflow-y-auto"
           >
             <div className="flex items-center justify-between px-6 py-5 sticky top-0 bg-background/80 backdrop-blur-xl border-b border-border/40 z-10">
-              <Link to="/" onClick={() => setOpen(false)} className="font-display text-xl font-bold">
-                Nexa<span className="text-primary">Studio</span>
+              <Link to="/" onClick={() => setOpen(false)} className="flex items-center">
+                <img src="/images/gipsmlo.png" alt="Gipsm Technology" className="h-10 w-auto object-contain" />
               </Link>
               <button
                 onClick={() => setOpen(false)}

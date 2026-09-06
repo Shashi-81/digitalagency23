@@ -14,13 +14,13 @@ export const Route = createFileRoute("/work/$slug")({
   },
   head: ({ params, loaderData }) => {
     const p = loaderData?.project;
-    const title = p ? `${p.name} — Case Study | NexaStudio` : "Case Study | NexaStudio";
-    const description = p?.summary ?? "Selected work by NexaStudio.";
+    const title = p ? `${p.name} — Portfolio Direction | Gipsm Technology` : "Portfolio Direction | Gipsm Technology";
+    const description = p?.summary ?? "A portfolio direction by Gipsm Technology.";
     const ogImage = `/og/work-${params.slug}.jpg`;
-    const headline = p?.metrics?.[0] ? `${p.metrics[0].value} ${p.metrics[0].label}` : "Real outcomes";
+    const headline = "Example digital experience direction";
     const imageAlt = p
-      ? `${p.name} case study by NexaStudio — ${headline}. View the full project.`
-      : "NexaStudio case study — View the full project.";
+      ? `${p.name} case study by Gipsm Technology — ${headline}. View the full project.`
+      : "Gipsm Technology portfolio direction — Explore the approach.";
     return {
       meta: [
         { title },
@@ -49,7 +49,7 @@ export const Route = createFileRoute("/work/$slug")({
                 name: p.name,
                 headline: `${p.name} — ${p.cat}`,
                 description: p.summary,
-                creator: { "@type": "Organization", name: "NexaStudio" },
+                creator: { "@type": "Organization", name: "Gipsm Technology" },
                 about: p.industry,
                 keywords: p.services.join(", "),
                 datePublished: p.year,
@@ -101,7 +101,7 @@ function CaseStudy() {
               >
                 <ArrowLeft className="h-4 w-4" /> All work
               </Link>
-              <p className="text-xs uppercase tracking-[0.25em] text-primary mb-4">— {p.cat}</p>
+                <p className="text-xs uppercase tracking-[0.25em] text-primary mb-4">— Portfolio direction · {p.cat}</p>
               <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.02] mb-8 max-w-5xl">
                 {p.name}<span className="text-primary">.</span>
               </h1>
@@ -113,8 +113,8 @@ function CaseStudy() {
             <Reveal delay={0.1}>
               <dl className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden border border-border">
                 {[
-                  { k: "Client", v: p.client },
-                  { k: "Year", v: p.year },
+                  { k: "Format", v: "Concept direction" },
+                  { k: "Status", v: "Available to build" },
                   { k: "Industry", v: p.industry },
                   { k: "Timeline", v: p.timeline },
                 ].map((item) => (
@@ -152,16 +152,16 @@ function CaseStudy() {
         <section className="py-20 border-y border-border">
           <div className="mx-auto max-w-7xl px-6">
             <Reveal>
-              <p className="text-xs uppercase tracking-[0.25em] text-primary mb-3">— Outcomes</p>
+              <p className="text-xs uppercase tracking-[0.25em] text-primary mb-3">— What we can shape</p>
               <h2 className="font-display text-3xl md:text-5xl font-bold mb-12 max-w-2xl">
-                The <span className="text-gradient">numbers.</span>
+                The <span className="text-gradient">building blocks.</span>
               </h2>
             </Reveal>
             <StaggerGroup className="grid grid-cols-2 md:grid-cols-4 gap-5">
-              {p.metrics.map((m) => (
-                <StaggerItem key={m.label} className="rounded-2xl border border-border p-6 bg-card">
-                  <div className="font-display text-4xl md:text-5xl font-bold text-gradient">{m.value}</div>
-                  <p className="mt-3 text-sm text-muted-foreground">{m.label}</p>
+              {p.services.slice(0, 4).map((service) => (
+                <StaggerItem key={service} className="rounded-2xl border border-border p-6 bg-card">
+                  <div className="font-display text-2xl md:text-3xl font-bold text-gradient">{service}</div>
+                  <p className="mt-3 text-sm text-muted-foreground">A focused part of the digital system.</p>
                 </StaggerItem>
               ))}
             </StaggerGroup>
@@ -205,8 +205,8 @@ function CaseStudy() {
               </Reveal>
 
               <Reveal>
-                <h3 className="font-display text-3xl md:text-4xl font-bold mb-4">The outcome</h3>
-                <p className="text-lg text-muted-foreground leading-relaxed">{p.outcome}</p>
+                <h3 className="font-display text-3xl md:text-4xl font-bold mb-4">The direction</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed">A clear, credible digital experience designed around your offer, audience, and next stage of growth.</p>
               </Reveal>
             </div>
           </div>
@@ -241,12 +241,12 @@ function CaseStudy() {
           <section className="py-24 border-y border-border">
             <div className="mx-auto max-w-4xl px-6 text-center">
               <Reveal>
-                <p className="text-xs uppercase tracking-[0.25em] text-primary mb-6">— What they said</p>
+                <p className="text-xs uppercase tracking-[0.25em] text-primary mb-6">— The intended experience</p>
                 <blockquote className="font-display text-2xl md:text-4xl font-medium leading-snug">
-                  &ldquo;{p.testimonial.quote}&rdquo;
+                  &ldquo;A sharper digital presence that makes the value obvious and the next step easy.&rdquo;
                 </blockquote>
                 <div className="mt-8 text-sm text-muted-foreground">
-                  <span className="text-foreground font-medium">{p.testimonial.author}</span> · {p.testimonial.role}
+                  <span className="text-foreground font-medium">Gipsm Technology</span> · Example creative direction
                 </div>
               </Reveal>
             </div>
@@ -265,7 +265,7 @@ function CaseStudy() {
               >
                 <div className="absolute inset-0 bg-background/40 group-hover:bg-background/20 transition-colors" />
                 <div className="absolute inset-0 p-10 md:p-16 flex flex-col justify-between">
-                  <p className="text-xs uppercase tracking-[0.25em] text-foreground/80">— Next case study</p>
+                  <p className="text-xs uppercase tracking-[0.25em] text-foreground/80">— Next portfolio direction</p>
                   <div className="flex items-end justify-between gap-6">
                     <div>
                       <p className="text-xs uppercase tracking-[0.2em] text-foreground/70 mb-2">{next.cat}</p>

@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
-import { Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { CheckCircle2, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Reveal } from "../ui-extra/Reveal";
 
 const TESTIMONIALS = [
-  { name: "Sarah Chen", role: "VP Product", co: "Helio Finance", q: "NexaStudio rebuilt our onboarding and tripled activation in a quarter. They operate like a part of the team — only sharper." },
-  { name: "Marcus Reid", role: "Founder", co: "Atlas Outdoor", q: "The brand they delivered finally matched our ambition. Wholesale partners noticed within weeks." },
-  { name: "Priya Anand", role: "CTO", co: "Cipher AI", q: "Senior engineering, design taste, and product instincts in one room. We extended the contract twice." },
-  { name: "Daniel Okonkwo", role: "Head of Growth", co: "Northwind", q: "The most thoughtful partner we've worked with. They challenged us, then shipped." },
-  { name: "Emily Vasquez", role: "CEO", co: "Loom Labs", q: "Sites and apps that feel alive. Conversion improvements paid for the engagement in two months." },
+  { name: "A clearer position", role: "Strategy", co: "Start with the business", q: "We clarify what makes your offer valuable, who it is for, and why it should be trusted before we build the next touchpoint." },
+  { name: "A stronger experience", role: "Design", co: "Make every interaction count", q: "We turn strategy into a coherent brand and digital journey that helps the right people understand, believe, and act." },
+  { name: "A system for growth", role: "Execution", co: "Keep improving after launch", q: "We leave you with connected foundations for content, campaigns, analytics, and automation so growth does not depend on guesswork." },
 ];
 
 export function Testimonials() {
@@ -46,11 +44,7 @@ export function Testimonials() {
               exit={{ opacity: 0, y: -16 }}
               transition={{ duration: 0.5 }}
             >
-              <div className="flex gap-1 mb-6">
-                {Array.from({ length: 5 }).map((_, k) => (
-                  <Star key={k} className="h-4 w-4 fill-lime text-lime" />
-                ))}
-              </div>
+              <CheckCircle2 className="h-6 w-6 text-primary mb-6" />
               <p className="font-display text-2xl md:text-3xl leading-snug">"{t.q}"</p>
               <div className="mt-8 flex items-center gap-4">
                 <div className="h-12 w-12 rounded-full bg-gradient-to-br from-primary to-lime flex items-center justify-center font-display font-bold text-primary-foreground">

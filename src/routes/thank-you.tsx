@@ -5,8 +5,8 @@ import { Footer } from "@/components/Footer";
 import { MobileStickyCta } from "@/components/MobileStickyCta";
 import { Reveal } from "@/components/ui-extra/Reveal";
 
-const TITLE = "Thank you — NexaStudio";
-const DESCRIPTION = "We received your message and will get back to you within 24 hours.";
+const TITLE = "Thank you — Gipsm Technology";
+const DESCRIPTION = "We received your message and will review it before following up with next steps.";
 
 export const Route = createFileRoute("/thank-you")({
   head: () => ({
@@ -20,11 +20,11 @@ export const Route = createFileRoute("/thank-you")({
       { property: "og:image", content: "/og/thank-you.jpg" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "Thank you from NexaStudio — Message received. A senior strategist will reply within 24 hours." },
+      { property: "og:image:alt", content: "Thank you from Gipsm Technology — Message received." },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },
       { name: "twitter:image", content: "/og/thank-you.jpg" },
-      { name: "twitter:image:alt", content: "Thank you from NexaStudio — Message received. A senior strategist will reply within 24 hours." },
+      { name: "twitter:image:alt", content: "Thank you from Gipsm Technology — Message received." },
     ],
     links: [{ rel: "canonical", href: "/thank-you" }],
   }),
@@ -52,11 +52,11 @@ function ThankYou() {
               We got your <span className="text-gradient">message.</span>
             </h1>
             <p className="mt-6 text-lg text-muted-foreground max-w-xl mx-auto">
-              Thanks for reaching out. We reply to every enquiry personally — usually within 24 hours on business days.
+              Thanks for reaching out. We review every enquiry personally and follow up with relevant next steps.
             </p>
             <div className="mt-6 inline-flex items-center gap-2 rounded-full glass px-4 py-2 text-sm">
               <Clock className="h-4 w-4 text-primary" />
-              Expected response: <span className="text-foreground font-medium">Within 24 hours</span>
+              <span className="text-foreground font-medium">Next steps after review</span>
             </div>
           </Reveal>
 

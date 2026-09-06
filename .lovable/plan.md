@@ -1,5 +1,5 @@
 
-# SEO Implementation for NexaStudio
+# SEO Implementation for Gipsm Technology
 
 Single-page site (one route `/`), so SEO work concentrates on the root + index route, plus a sitemap and robots file.
 
@@ -7,7 +7,7 @@ Single-page site (one route `/`), so SEO work concentrates on the root + index r
 
 Replace the generic "Lovable App" meta with sitewide defaults:
 - `og:type: website`
-- `og:site_name: NexaStudio`
+- `og:site_name: Gipsm Technology`
 - `twitter:card: summary_large_image`
 - Theme color, favicon link
 - Sitewide JSON-LD `Organization` + `WebSite` (with `SearchAction` omitted since no search)
@@ -25,7 +25,7 @@ Expand `head()`:
 
 ## 3. OG share image
 
-Generate one premium 1200×630 image at `public/og-image.jpg` — dark obsidian background, "NexaStudio" wordmark + tagline "Digital experiences that convert", cyan/lime accent. Referenced as absolute-path `/og-image.jpg` in og:image / twitter:image.
+Generate one premium 1200×630 image at `public/og-image.jpg` — dark obsidian background, "Gipsm Technology" wordmark + tagline "Digital experiences that convert", cyan/lime accent. Referenced as absolute-path `/og-image.jpg` in og:image / twitter:image.
 
 ## 4. Sitemap (`src/routes/sitemap[.]xml.ts`)
 

@@ -149,10 +149,10 @@ export function LegalLayout({ doc }: { doc: LegalDoc }) {
                       Reach our legal team — we reply within one business day.
                     </p>
                     <a
-                      href="mailto:legal@nexastudio.com"
+                      href="mailto:legal@gipsmtechnology.com"
                       className="text-sm text-primary hover:underline font-medium"
                     >
-                      legal@nexastudio.com
+                      legal@gipsmtechnology.com
                     </a>
                   </div>
                 </div>

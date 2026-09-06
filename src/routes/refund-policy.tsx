@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { LegalLayout } from "@/components/LegalLayout";
 import { REFUND } from "@/lib/legal";
 
-const TITLE = "Refund Policy — NexaStudio";
+const TITLE = "Refund Policy — Gipsm Technology";
 const DESCRIPTION =
-  "When refunds are available and how to request one at NexaStudio.";
+  "When refunds are available and how to request one at Gipsm Technology.";
 
 export const Route = createFileRoute("/refund-policy")({
   head: () => ({
@@ -17,11 +17,11 @@ export const Route = createFileRoute("/refund-policy")({
       { property: "og:image", content: "/og/refund-policy.jpg" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "NexaStudio Refund Policy — When refunds are available and how to request one." },
+      { property: "og:image:alt", content: "Gipsm Technology Refund Policy — When refunds are available and how to request one." },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },
       { name: "twitter:image", content: "/og/refund-policy.jpg" },
-      { name: "twitter:image:alt", content: "NexaStudio Refund Policy — When refunds are available and how to request one." },
+      { name: "twitter:image:alt", content: "Gipsm Technology Refund Policy — When refunds are available and how to request one." },
     ],
     links: [{ rel: "canonical", href: "/refund-policy" }],
   }),

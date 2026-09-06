@@ -16,13 +16,13 @@ export const Route = createFileRoute("/services/$slug")({
   },
   head: ({ params, loaderData }) => {
     const s = loaderData?.service;
-    const title = s?.seo.title ?? "Services | NexaStudio";
-    const description = s?.seo.description ?? "Services by NexaStudio.";
+    const title = s?.seo.title ?? "Services | Gipsm Technology";
+    const description = s?.seo.description ?? "Services by Gipsm Technology.";
     const url = `/services/${params.slug}`;
     const ogImage = `/og/services-${params.slug}.jpg`;
     const imageAlt = s
-      ? `${s.short} by NexaStudio — ${s.tagline ?? s.seo.description}. Get a free quote in 24 hours.`
-      : "NexaStudio services — Get a free quote in 24 hours.";
+      ? `${s.short} by Gipsm Technology — ${s.tagline ?? s.seo.description}.`
+      : "Gipsm Technology services.";
     return {
       meta: [
         { title },
@@ -53,7 +53,7 @@ export const Route = createFileRoute("/services/$slug")({
                 serviceType: s.short,
                 name: s.short,
                 description: s.seo.description,
-                provider: { "@type": "Organization", name: "NexaStudio" },
+                provider: { "@type": "Organization", name: "Gipsm Technology" },
                 areaServed: "Worldwide",
                 url,
                 offers: s.pricing.map((p) => ({
@@ -157,8 +157,8 @@ function ServicePage() {
               </p>
 
               <div className="mt-10 flex flex-wrap gap-3">
-                {s.hero.badges.map((b) => (
-                  <span key={b} className="rounded-full glass px-4 py-2 text-sm">{b}</span>
+                {["Strategy-led", "Built for your context", "Clear next steps"].map((badge) => (
+                  <span key={badge} className="rounded-full glass px-4 py-2 text-sm">{badge}</span>
                 ))}
               </div>
 
@@ -171,7 +171,7 @@ function ServicePage() {
                   Get a Free Quote <ArrowUpRight className="h-4 w-4" />
                 </Link>
                 <a
-                  href="https://cal.com/nexastudio/intro"
+                  href="https://cal.com/gipsmtechnology/intro"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 rounded-full border border-border px-7 py-3.5 font-medium hover:border-primary/60 hover:text-primary transition-colors"
@@ -199,7 +199,7 @@ function ServicePage() {
               {s.overview.stats.map((stat, i) => (
                 <Reveal key={stat.label} delay={i * 0.08}>
                   <div className="rounded-2xl glass p-7">
-                    <div className="font-display text-5xl font-bold text-gradient">{stat.value}</div>
+                    <div className="font-display text-5xl font-bold text-gradient">{String(i + 1).padStart(2, "0")}</div>
                     <p className="mt-2 text-sm text-muted-foreground uppercase tracking-wider">{stat.label}</p>
                   </div>
                 </Reveal>
@@ -287,16 +287,16 @@ function ServicePage() {
           </div>
         </section>
 
-        {/* Result / Case study snippet */}
+        {/* Positioning statement */}
         <section className="py-24 border-t border-border">
           <div className="mx-auto max-w-5xl px-6">
             <Reveal>
-              <p className="text-xs uppercase tracking-[0.25em] text-primary mb-6 text-center">— Real Results</p>
+              <p className="text-xs uppercase tracking-[0.25em] text-primary mb-6 text-center">— What this can unlock</p>
               <blockquote className="font-display text-2xl md:text-4xl font-medium leading-snug text-center">
-                &ldquo;{s.result.quote}&rdquo;
+                &ldquo;A clearer digital system, shaped around your audience, offer, and next stage of growth.&rdquo;
               </blockquote>
               <p className="mt-8 text-sm text-muted-foreground text-center">
-                <span className="text-foreground font-medium">{s.result.client}</span> · NexaStudio Client
+                <span className="text-foreground font-medium">Gipsm Technology</span> · Example engagement direction
               </p>
             </Reveal>
           </div>
@@ -311,7 +311,7 @@ function ServicePage() {
                 Transparent <span className="text-gradient">starting points.</span>
               </h2>
               <p className="text-muted-foreground max-w-2xl mb-16">
-                Every project is custom-scoped. These are starting prices — get a precise quote in 24 hours.
+                Every project is custom-scoped. These are starting prices to help frame a conversation about your needs.
               </p>
             </Reveal>
             <StaggerGroup className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -423,7 +423,7 @@ function ServicePage() {
                       Start a Project <ArrowUpRight className="h-4 w-4" />
                     </Link>
                     <a
-                      href="https://cal.com/nexastudio/intro"
+                      href="https://cal.com/gipsmtechnology/intro"
                       target="_blank"
                       rel="noreferrer"
                       className="inline-flex items-center gap-2 rounded-full border border-border px-7 py-3.5 font-medium hover:border-primary/60 hover:text-primary transition-colors"
@@ -434,7 +434,7 @@ function ServicePage() {
                   <div className="mt-10 flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-xs text-muted-foreground">
                     <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-primary" /> Reply within 1 business day</span>
                     <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-primary" /> NDA on request</span>
-                    <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-primary" /> Fixed-fee proposals</span>
+                    <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-primary" /> Clear scope and milestones</span>
                   </div>
                 </div>
               </div>

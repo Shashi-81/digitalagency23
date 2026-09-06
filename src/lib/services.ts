@@ -49,7 +49,7 @@ export const SERVICES: Service[] = [
     navTitle: "UI/UX Design",
     tagline: "User-centered design that converts.",
     seo: {
-      title: "UI/UX Design Services | User-Centered Digital Design — NexaStudio",
+      title: "UI/UX Design Services | User-Centered Digital Design — Gipsm Technology",
       description:
         "Transform your product with world-class UI/UX design. We create intuitive, beautiful, and conversion-optimized interfaces for web and mobile apps.",
       keywords:
@@ -60,7 +60,7 @@ export const SERVICES: Service[] = [
       headline: "Design that users love &",
       headlineAccent: "businesses trust.",
       sub: "We craft pixel-perfect, human-centered digital experiences that reduce churn, boost engagement, and make your product unforgettable.",
-      badges: ["⭐ 4.9 Rated", "🎨 150+ Designs Delivered", "⚡ 7-Day First Draft"],
+      badges: ["Research-led", "Responsive by default", "Built for handoff"],
     },
     gradient: G.cyan,
     overview: {
@@ -69,9 +69,9 @@ export const SERVICES: Service[] = [
         "Whether you're launching a new product, redesigning an existing app, or building a design system from scratch — we bring clarity, consistency, and creativity to every screen.",
       ],
       stats: [
-        { value: "300+", label: "Screens Designed" },
-        { value: "+40%", label: "Avg. Retention Lift" },
-        { value: "98%", label: "Client Satisfaction" },
+        { value: "01", label: "Understand the user" },
+        { value: "02", label: "Shape the experience" },
+        { value: "03", label: "Prepare the handoff" },
       ],
     },
     features: [
@@ -122,7 +122,7 @@ export const SERVICES: Service[] = [
     navTitle: "Web Development",
     tagline: "Fast, scalable, conversion-ready web builds.",
     seo: {
-      title: "Web Development Services | Custom Websites & Web Apps — NexaStudio",
+      title: "Web Development Services | Custom Websites & Web Apps — Gipsm Technology",
       description:
         "Custom web development using React, Next.js and Node.js. We build fast, scalable, SEO-ready websites and web applications that drive real business results.",
       keywords:
@@ -198,7 +198,7 @@ export const SERVICES: Service[] = [
     navTitle: "Mobile Apps",
     tagline: "iOS & Android apps users love.",
     seo: {
-      title: "Mobile App Development | iOS & Android Apps — NexaStudio",
+      title: "Mobile App Development | iOS & Android Apps — Gipsm Technology",
       description:
         "Custom iOS and Android app development. We build high-performance, user-loved mobile apps using React Native and Flutter for startups and enterprises.",
       keywords:
@@ -270,7 +270,7 @@ export const SERVICES: Service[] = [
     navTitle: "Brand Identity",
     tagline: "Brand identities that command attention.",
     seo: {
-      title: "Brand Identity Design | Logo & Design Systems — NexaStudio",
+      title: "Brand Identity Design | Logo & Design Systems — Gipsm Technology",
       description:
         "Build a brand that commands attention. We create strategic brand identities — logo, colors, typography and complete design systems for modern businesses.",
       keywords:
@@ -319,7 +319,7 @@ export const SERVICES: Service[] = [
     result: {
       client: "Luminary Finance",
       quote:
-        "After rebranding with NexaStudio, Luminary Finance raised $800K seed funding within 45 days — investors cited the professional brand presence as a key trust signal.",
+        "After rebranding with Gipsm Technology, Luminary Finance raised $800K seed funding within 45 days — investors cited the professional brand presence as a key trust signal.",
     },
     pricing: [
       { tier: "Logo Only", from: "$500" },
@@ -340,7 +340,7 @@ export const SERVICES: Service[] = [
     navTitle: "SEO & Marketing",
     tagline: "Search-led growth, wired to revenue.",
     seo: {
-      title: "SEO & Digital Marketing Services | Grow Organic Traffic — NexaStudio",
+      title: "SEO & Digital Marketing Services | Grow Organic Traffic — Gipsm Technology",
       description:
         "Data-driven SEO and digital marketing that grows your organic traffic, generates qualified leads and delivers measurable ROI. No vanity metrics — just real results.",
       keywords:
@@ -391,7 +391,7 @@ export const SERVICES: Service[] = [
     result: {
       client: "TechSpark",
       quote:
-        "In 6 months, NexaStudio grew TechSpark's organic traffic from 2,000 to 47,000 monthly visits — a 2,250% increase — generating $180K in new pipeline from SEO alone.",
+        "In 6 months, Gipsm Technology grew TechSpark's organic traffic from 2,000 to 47,000 monthly visits — a 2,250% increase — generating $180K in new pipeline from SEO alone.",
     },
     pricing: [
       { tier: "SEO Starter (Local/Small)", from: "$800/mo" },
@@ -414,7 +414,7 @@ export const SERVICES: Service[] = [
     navTitle: "AI Integration",
     tagline: "Production-ready AI for real businesses.",
     seo: {
-      title: "AI Integration & Automation Services | Build AI-Powered Products — NexaStudio",
+      title: "AI Integration & Automation Services | Build AI-Powered Products — Gipsm Technology",
       description:
         "Integrate AI into your business — chatbots, automation workflows, LLM-powered apps and custom AI tools built with OpenAI, Claude and more.",
       keywords:
@@ -488,7 +488,7 @@ export const SERVICES: Service[] = [
     navTitle: "Performance Marketing",
     tagline: "Paid campaigns wired to revenue, not vanity metrics.",
     seo: {
-      title: "Performance Marketing Agency | Google, Meta & LinkedIn Ads — NexaStudio",
+      title: "Performance Marketing Agency | Google, Meta & LinkedIn Ads — Gipsm Technology",
       description:
         "ROI-focused performance marketing across Google Ads, Meta and LinkedIn. Full-funnel campaign strategy, landing page optimization and attribution — tied to revenue, not clicks.",
       keywords:
@@ -563,7 +563,7 @@ export const SERVICES: Service[] = [
     navTitle: "Marketing Automation",
     tagline: "Lifecycle marketing on Email and WhatsApp — global and local.",
     seo: {
-      title: "Marketing Automation | Email & WhatsApp Lifecycle Marketing — NexaStudio",
+      title: "Marketing Automation | Email & WhatsApp Lifecycle Marketing — Gipsm Technology",
       description:
         "Email and WhatsApp marketing automation for global and India-facing businesses. Nurture sequences, broadcast campaigns, CRM workflows, segmentation and deliverability — built to drive repeat revenue.",
       keywords:
@@ -614,7 +614,7 @@ export const SERVICES: Service[] = [
     result: {
       client: "Kaya Wellness (India)",
       quote:
-        "NexaStudio rebuilt Kaya's lifecycle across email and WhatsApp — automations now drive 42% of monthly revenue, with WhatsApp broadcasts opening at 96% and reactivating dormant customers we'd written off.",
+        "Gipsm Technology rebuilt Kaya's lifecycle across email and WhatsApp — automations now drive 42% of monthly revenue, with WhatsApp broadcasts opening at 96% and reactivating dormant customers we'd written off.",
     },
     pricing: [
       { tier: "Email Foundations", from: "$1,200/mo" },
@@ -638,7 +638,7 @@ export const SERVICES: Service[] = [
     navTitle: "Content Production",
     tagline: "Premium content systems — motion, video and design on retainer.",
     seo: {
-      title: "Content Production | Motion, Video & Design Systems — NexaStudio",
+      title: "Content Production | Motion, Video & Design Systems — Gipsm Technology",
       description:
         "Premium content production for brands that publish weekly. Short-form video editing, motion graphics, brand films and ongoing graphic design — delivered as a system, not one-offs.",
       keywords:

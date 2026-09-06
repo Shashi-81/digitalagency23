@@ -1,6 +1,6 @@
-# NexaStudio Agency
+# Gipsm Technology Agency
 
-Build a world-class digital services agency website called "NexaStudio" (or suggest a better name). This is a full-stack design + development agency offering services to startups and enterprises. The site must be visually stunning, conversion-focused, and feel like a top-tier agency like Awwwards-winning studios.
+Build a world-class digital services agency website called "Gipsm Technology" (or suggest a better name). This is a full-stack design + development agency offering services to startups and enterprises. The site must be visually stunning, conversion-focused, and feel like a top-tier agency like Awwwards-winning studios.
 
 ---
 

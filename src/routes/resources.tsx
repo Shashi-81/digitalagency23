@@ -7,7 +7,7 @@ import { Footer } from "@/components/Footer";
 import { MobileStickyCta } from "@/components/MobileStickyCta";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui-extra/Reveal";
 
-const TITLE = "Free Resources — UI Kits, SEO & Brand Templates | NexaStudio";
+const TITLE = "Free Resources — UI Kits, SEO & Brand Templates | Gipsm Technology";
 const DESCRIPTION =
   "Hand-picked free tools and templates for founders: UI kit, SEO checklist, brand guide template, and a project brief template.";
 
@@ -22,11 +22,11 @@ export const Route = createFileRoute("/resources")({
       { property: "og:image", content: "/og/resources.jpg" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "Free Resources by NexaStudio — UI kit, SEO checklist, brand & brief templates. Download free." },
+      { property: "og:image:alt", content: "Free Resources by Gipsm Technology — UI kit, SEO checklist, brand & brief templates. Download free." },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },
       { name: "twitter:image", content: "/og/resources.jpg" },
-      { name: "twitter:image:alt", content: "Free Resources by NexaStudio — UI kit, SEO checklist, brand & brief templates. Download free." },
+      { name: "twitter:image:alt", content: "Free Resources by Gipsm Technology — UI kit, SEO checklist, brand & brief templates. Download free." },
     ],
     links: [{ rel: "canonical", href: "/resources" }],
   }),
@@ -37,30 +37,30 @@ const RESOURCES = [
   {
     id: "ui-kit",
     icon: Palette,
-    title: "NexaStudio UI Kit",
-    desc: "120+ Figma components, dark-first, fully tokenized. Use for landing pages, dashboards, and product UIs.",
-    file: "/resources/nexa-ui-kit.fig",
+    title: "Gipsm Technology UI Kit",
+    desc: "A practical interface and UX checklist for landing pages, dashboards, and product experiences.",
+    file: "/resources/gipsm-technology-ui-kit.md",
   },
   {
     id: "seo-checklist",
     icon: Search,
     title: "SEO Launch Checklist",
-    desc: "47-point checklist covering technical SEO, on-page, schema, and Core Web Vitals before you ship.",
-    file: "/resources/seo-checklist.pdf",
+    desc: "A focused checklist covering technical SEO, on-page structure, accessibility, and launch checks.",
+    file: "/resources/seo-launch-checklist.md",
   },
   {
     id: "brand-guide",
     icon: FileText,
     title: "Brand Guide Template",
-    desc: "A clean, editable brand-book template covering identity, voice, colour, typography, and usage rules.",
-    file: "/resources/brand-guide-template.fig",
+    desc: "A simple brand-book outline covering positioning, voice, visual direction, and review rules.",
+    file: "/resources/brand-guide-template.md",
   },
   {
     id: "project-brief",
     icon: ClipboardList,
     title: "Project Brief Template",
-    desc: "The exact one-pager we use to scope new engagements. Save weeks of back-and-forth with stakeholders.",
-    file: "/resources/project-brief.docx",
+    desc: "A concise one-page brief for goals, audience, scope, success measures, and constraints.",
+    file: "/resources/project-brief-template.md",
   },
 ];
 
@@ -175,7 +175,7 @@ function Resources() {
                 Enter your email to unlock
               </h3>
               <p className="text-sm text-muted-foreground mb-6">
-                We'll email the file link instantly. No spam, ever — unsubscribe with one click.
+                Enter your email to unlock the resource. The file will open immediately after submission.
               </p>
               <form onSubmit={submit} className="space-y-3" noValidate>
                 <input
@@ -202,7 +202,7 @@ function Resources() {
                   type="submit"
                   className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 text-sm font-medium hover:shadow-[0_0_30px_-5px_var(--primary)] transition-shadow"
                 >
-                  <Download className="h-4 w-4" /> Send me the file
+                  <Download className="h-4 w-4" /> Unlock resource
                 </button>
                 <button
                   type="button"

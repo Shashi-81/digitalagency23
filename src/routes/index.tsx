@@ -5,11 +5,9 @@ import { Hero } from "@/components/sections/Hero";
 import { Marquee } from "@/components/sections/Marquee";
 import { Stats } from "@/components/sections/Stats";
 import { Services } from "@/components/sections/Services";
-import { Work } from "@/components/sections/Work";
 import { WhyUs } from "@/components/sections/WhyUs";
 import { Process } from "@/components/sections/Process";
 import { Testimonials } from "@/components/sections/Testimonials";
-import { Pricing } from "@/components/sections/Pricing";
 import { Faq } from "@/components/sections/Faq";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { Contact } from "@/components/sections/Contact";
@@ -18,7 +16,7 @@ import { MobileStickyCta } from "@/components/MobileStickyCta";
 import { FAQS } from "@/lib/faqs";
 
 
-const TITLE = "NexaStudio — Digital Experiences That Convert";
+const TITLE = "Gipsm Technology — Digital Experiences That Convert";
 const DESCRIPTION =
   "A full-stack design & development studio building brands, products, and growth systems for ambitious teams.";
 
@@ -34,11 +32,11 @@ export const Route = createFileRoute("/")({
       { property: "og:image", content: "/og/home.jpg" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "NexaStudio — Digital experiences that convert. Start a project with our senior design & engineering team." },
+      { property: "og:image:alt", content: "Gipsm Technology — Digital experiences that convert. Start a project with our senior design & engineering team." },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },
       { name: "twitter:image", content: "/og/home.jpg" },
-      { name: "twitter:image:alt", content: "NexaStudio — Digital experiences that convert. Start a project with our senior design & engineering team." },
+      { name: "twitter:image:alt", content: "Gipsm Technology — Digital experiences that convert. Start a project with our senior design & engineering team." },
     ],
     links: [{ rel: "canonical", href: "/" }],
     scripts: [
@@ -47,7 +45,7 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "ProfessionalService",
-          name: "NexaStudio",
+          name: "Gipsm Technology",
           description: DESCRIPTION,
           url: "/",
           image: "/og/home.jpg",
@@ -90,11 +88,9 @@ function Index() {
         <Stats />
         <Marquee />
         <Services />
-        <Work />
         <WhyUs />
         <Process />
         <Testimonials />
-        <Pricing />
         <Faq />
         <CtaBanner />
         <Contact />

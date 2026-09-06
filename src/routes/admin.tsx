@@ -9,7 +9,7 @@ export const Route = createFileRoute("/admin")({
   component: AdminHome,
   head: () => ({
     meta: [
-      { title: "Admin — NexaStudio" },
+      { title: "Admin — Gipsm Technology" },
       { name: "robots", content: "noindex, nofollow" },
     ],
   }),

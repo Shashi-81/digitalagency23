@@ -1,12 +1,11 @@
-import { Award, Users, Clock, Headphones } from "lucide-react";
-import { Counter } from "../ui-extra/Counter";
+import { Compass, Layers3, MessagesSquare, TrendingUp } from "lucide-react";
 import { Reveal } from "../ui-extra/Reveal";
 
 const STATS = [
-  { icon: Clock, n: 8, suffix: "+", label: "Years in business" },
-  { icon: Users, n: 200, suffix: "+", label: "Happy clients" },
-  { icon: Award, n: 50, suffix: "+", label: "Industry awards" },
-  { icon: Headphones, n: 24, suffix: "/7", label: "Partner support" },
+  { icon: Compass, label: "Business-first strategy" },
+  { icon: Layers3, label: "Connected digital systems" },
+  { icon: TrendingUp, label: "Performance-minded design" },
+  { icon: MessagesSquare, label: "Clear, close collaboration" },
 ];
 
 export function WhyUs() {
@@ -14,7 +13,7 @@ export function WhyUs() {
     <section className="relative py-32">
       <div className="mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-16 items-center">
         <Reveal>
-          <p className="text-xs uppercase tracking-[0.25em] text-primary mb-4">— Why NexaStudio</p>
+          <p className="text-xs uppercase tracking-[0.25em] text-primary mb-4">— Why Gipsm Technology</p>
           <h2 className="font-display text-5xl md:text-6xl font-bold leading-[1.02]">
             We obsess over outcomes, <span className="text-gradient">not deliverables.</span>
           </h2>
@@ -28,10 +27,7 @@ export function WhyUs() {
             {STATS.map((s) => (
               <div key={s.label} className="glass rounded-2xl p-6 hover:border-primary/40 transition-colors">
                 <s.icon className="h-6 w-6 text-primary mb-6" strokeWidth={1.5} />
-                <div className="font-display text-5xl font-bold tracking-tight">
-                  <Counter to={s.n} suffix={s.suffix} />
-                </div>
-                <p className="mt-2 text-sm text-muted-foreground">{s.label}</p>
+                <p className="font-display text-xl font-bold tracking-tight">{s.label}</p>
               </div>
             ))}
           </div>

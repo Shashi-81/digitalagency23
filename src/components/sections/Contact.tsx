@@ -1,7 +1,7 @@
 import { useState } from "react";
 import {
-  Mail, Phone, MapPin, Check, ArrowUpRight, ArrowRight, ArrowLeft,
-  Twitter, Linkedin, Github, Instagram, Calendar, Rocket, Paintbrush, Code2, Layers, HelpCircle,
+  Mail, MapPin, Check, ArrowUpRight, ArrowRight, ArrowLeft,
+  Calendar, Rocket, Paintbrush, Code2, Layers, HelpCircle,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { z } from "zod";
@@ -87,7 +87,7 @@ export function Contact() {
 
           {/* Book a call card */}
           <a
-            href="https://cal.com/nexastudio/intro"
+            href="https://cal.com/gipsmtechnology/intro"
             target="_blank"
             rel="noreferrer"
             className="mt-10 group block rounded-2xl border border-border bg-card p-6 hover:border-primary/40 transition-colors"
@@ -109,18 +109,10 @@ export function Contact() {
           </a>
 
           <ul className="mt-10 space-y-5">
-            <Info icon={Mail} label="hello@nexastudio.co" />
-            <Info icon={Phone} label="+1 (415) 555-0142" />
-            <Info icon={MapPin} label="Brooklyn, NY · Remote-first" />
+            <Info icon={Mail} label="hello@gipsmtechnology.co" />
+            <Info icon={MapPin} label="Remote-first · Working globally" />
           </ul>
 
-          <div className="mt-10 flex gap-3">
-            {[Twitter, Linkedin, Github, Instagram].map((I, i) => (
-              <a key={i} href="#" aria-label="Social" className="h-11 w-11 inline-flex items-center justify-center rounded-full glass hover:text-primary hover:-translate-y-1 transition-all">
-                <I className="h-4 w-4" />
-              </a>
-            ))}
-          </div>
         </Reveal>
 
         {/* RIGHT — multi-step form */}
@@ -336,7 +328,7 @@ function SuccessState({ data }: { data: FormState }) {
         We'll review it and reply within one business day. In the meantime, feel free to book a call.
       </p>
       <a
-        href="https://cal.com/nexastudio/intro"
+        href="https://cal.com/gipsmtechnology/intro"
         target="_blank"
         rel="noreferrer"
         className="mt-8 inline-flex items-center gap-2 rounded-full border border-border px-5 py-3 text-sm font-medium hover:border-primary/40 transition-colors"

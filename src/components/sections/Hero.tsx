@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import { MagneticButton } from "../ui-extra/MagneticButton";
 
 export function Hero() {
-  const title1 = "We Build Digital".split(" ");
-  const title2 = "Experiences That Convert".split(" ");
+  const title1 = "Digital Growth".split(" ");
+  const title2 = "Built to Convert".split(" ");
 
   return (
     <section id="home" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-24 pb-12">
@@ -29,7 +29,7 @@ export function Hero() {
           className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs uppercase tracking-[0.18em] text-muted-foreground mb-8"
         >
           <span className="h-1.5 w-1.5 rounded-full bg-lime animate-pulse" />
-          Now booking Q3 2026
+          Strategy • Design • Growth
         </motion.div>
 
         <h1 className="font-display font-bold text-[clamp(2.6rem,8vw,7rem)] leading-[0.95] tracking-tight">
@@ -65,9 +65,9 @@ export function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 0.7 }}
-          className="mx-auto mt-8 max-w-2xl text-lg text-muted-foreground"
+          className="mx-auto mt-8 max-w-3xl text-lg text-muted-foreground"
         >
-          A full-stack design & development studio engineering brands, products, and growth systems that move the needle — not just the cursor.
+          Gipsm Technology helps ambitious businesses grow through strategy, branding, web experiences, digital marketing, automation, and performance-focused execution.
         </motion.p>
 
         <motion.div
@@ -79,8 +79,8 @@ export function Hero() {
           <MagneticButton variant="primary" asChildHref="#work">
             See Our Work <ArrowUpRight className="h-4 w-4" />
           </MagneticButton>
-          <MagneticButton variant="ghost" asChildHref="#contact">
-            <PlayCircle className="h-4 w-4" /> Book Free Call
+          <MagneticButton variant="ghost" asChildHref="/hire-us">
+            <PlayCircle className="h-4 w-4" /> Get a Free Consultation
           </MagneticButton>
         </motion.div>
 
@@ -90,11 +90,11 @@ export function Hero() {
           transition={{ delay: 1.3, duration: 0.7 }}
           className="mt-16 inline-flex flex-wrap items-center justify-center gap-x-8 gap-y-3 glass rounded-full px-8 py-4 text-sm"
         >
-          <Stat n="150+" l="Projects Shipped" />
+          <Stat n="Strategy" l="First" />
           <Divider />
-          <Stat n="$2M+" l="Revenue Generated" />
+          <Stat n="Design" l="That performs" />
           <Divider />
-          <Stat n="98%" l="Client Retention" />
+          <Stat n="Growth" l="Built in" />
         </motion.div>
       </div>
 

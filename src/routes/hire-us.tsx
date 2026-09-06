@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight, Calendar, Check, Shield, Clock, RotateCcw } from "lucide-react";
+import { ArrowUpRight, Calendar, Check, Shield, MessageSquare, Workflow } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { MobileStickyCta } from "@/components/MobileStickyCta";
@@ -7,9 +7,9 @@ import { CursorGlow } from "@/components/ui-extra/CursorGlow";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui-extra/Reveal";
 import { Contact } from "@/components/sections/Contact";
 
-const TITLE = "Hire Us — Build Something Amazing with NexaStudio";
+const TITLE = "Hire Us — Build Something Amazing with Gipsm Technology";
 const DESCRIPTION =
-  "Ready to start a project? Get a free quote in 24 hours. Senior team, fixed-fee proposals, money-back guarantee.";
+  "Ready to start a project? Share your brief with Gipsm Technology for a thoughtful conversation about scope, timing, and next steps.";
 
 export const Route = createFileRoute("/hire-us")({
   head: () => ({
@@ -22,11 +22,11 @@ export const Route = createFileRoute("/hire-us")({
       { property: "og:image", content: "/og/hire-us.jpg" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "Hire NexaStudio — Let's build something amazing together. Get a free quote in 24 hours." },
+      { property: "og:image:alt", content: "Hire Gipsm Technology — Let's build something amazing together." },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },
       { name: "twitter:image", content: "/og/hire-us.jpg" },
-      { name: "twitter:image:alt", content: "Hire NexaStudio — Let's build something amazing together. Get a free quote in 24 hours." },
+      { name: "twitter:image:alt", content: "Hire Gipsm Technology — Let's build something amazing together." },
     ],
     links: [{ rel: "canonical", href: "/hire-us" }],
   }),
@@ -34,8 +34,8 @@ export const Route = createFileRoute("/hire-us")({
 });
 
 const STEPS = [
-  { n: "01", title: "Share your brief", desc: "Fill the form or book a call. We respond within 24 hours with relevant questions." },
-  { n: "02", title: "Get a tailored proposal", desc: "Fixed-fee, milestone-based proposal with scope, timeline, and a senior team lined up." },
+  { n: "01", title: "Share your brief", desc: "Fill the form or book a call. Tell us what you are trying to change and why now." },
+  { n: "02", title: "Shape the engagement", desc: "We work through scope, priorities, timeline, and the right team for the work." },
   { n: "03", title: "Kick off in days, not months", desc: "Sign, deposit, and we start. Weekly demos, async updates, transparent progress." },
 ];
 
@@ -57,12 +57,12 @@ function HireUs() {
           <div className="absolute inset-0 mesh-bg opacity-60 blur-3xl" aria-hidden />
           <div className="relative mx-auto max-w-7xl px-6">
             <Reveal>
-              <p className="text-xs uppercase tracking-[0.25em] text-primary mb-5">— Hire NexaStudio</p>
+              <p className="text-xs uppercase tracking-[0.25em] text-primary mb-5">— Hire Gipsm Technology</p>
               <h1 className="font-display text-5xl md:text-7xl lg:text-[5.5rem] font-bold leading-[1.02] max-w-5xl">
                 Let's build something <span className="text-gradient">amazing together.</span>
               </h1>
               <p className="mt-8 text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-                A senior, full-stack team ready to design, build, and ship your next product. Get a free, fixed-fee quote in 24 hours.
+                A senior, full-stack team ready to design, build, and ship your next product. Start with a clear conversation about the work ahead.
               </p>
               <div className="mt-10 flex flex-wrap gap-4">
                 <a
@@ -72,7 +72,7 @@ function HireUs() {
                   Start a Project <ArrowUpRight className="h-4 w-4" />
                 </a>
                 <a
-                  href="https://cal.com/nexastudio/intro"
+                  href="https://cal.com/gipsmtechnology/intro"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 rounded-full border border-border px-7 py-3.5 font-medium hover:border-primary/60 hover:text-primary transition-colors"
@@ -84,9 +84,9 @@ function HireUs() {
               {/* Trust badges */}
               <div className="mt-12 grid sm:grid-cols-3 gap-4 max-w-3xl">
                 {[
-                  { I: Clock, label: "Reply in 24h", sub: "Every business day" },
+                  { I: MessageSquare, label: "Thoughtful replies", sub: "Your brief gets a considered response" },
                   { I: Shield, label: "NDA on request", sub: "Always confidential" },
-                  { I: RotateCcw, label: "Money-back", sub: "7-day no-questions" },
+                  { I: Workflow, label: "Clear scope", sub: "Priorities and next steps made visible" },
                 ].map(({ I, label, sub }) => (
                   <div key={label} className="flex items-center gap-3 rounded-2xl glass p-4">
                     <div className="h-10 w-10 rounded-full bg-primary/10 inline-flex items-center justify-center shrink-0">
@@ -135,7 +135,7 @@ function HireUs() {
                 Transparent <span className="text-gradient">pricing.</span>
               </h2>
               <p className="text-muted-foreground max-w-2xl mb-16">
-                Every project is custom-scoped. Below are typical starting points — your exact quote comes back within 24 hours.
+                Every project is custom-scoped. Below are typical starting points to help frame the conversation.
               </p>
             </Reveal>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -166,7 +166,7 @@ function HireUs() {
                   </p>
                 </div>
                 <a
-                  href="https://cal.com/nexastudio/intro"
+                  href="https://cal.com/gipsmtechnology/intro"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-7 py-3.5 font-medium hover:shadow-[0_0_40px_-5px_var(--primary)] transition-shadow shrink-0"

@@ -10,9 +10,8 @@ export function Work() {
         <Reveal>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div>
-              <p className="text-xs uppercase tracking-[0.25em] text-primary mb-4">— Selected Work</p>
               <h2 className="font-display text-5xl md:text-7xl font-bold leading-[1.02]">
-                Recent <span className="text-gradient">case studies.</span>
+                Explore the <span className="text-gradient">possibilities.</span>
               </h2>
             </div>
             <a href="#contact" className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground">
@@ -51,7 +50,7 @@ export function Work() {
                     <p className="text-xs uppercase tracking-[0.2em] text-foreground/70 mb-2">{p.cat}</p>
                     <h3 className="font-display text-3xl md:text-4xl font-bold">{p.name}</h3>
                     <div className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                      View case study <ArrowUpRight className="h-4 w-4" />
+                      Explore direction <ArrowUpRight className="h-4 w-4" />
                     </div>
                   </div>
                 </div>

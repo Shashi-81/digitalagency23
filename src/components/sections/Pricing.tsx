@@ -31,7 +31,6 @@ export function Pricing() {
     <section id="pricing" className="relative py-32 border-t border-border">
       <div className="mx-auto max-w-7xl px-6">
         <Reveal>
-          <p className="text-xs uppercase tracking-[0.25em] text-primary mb-4 text-center">— Pricing</p>
           <h2 className="font-display text-5xl md:text-7xl font-bold text-center leading-[1.02]">
             Clear scopes. <span className="text-gradient">Honest numbers.</span>
           </h2>

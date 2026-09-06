@@ -10,7 +10,7 @@ export const Route = createFileRoute("/admin/projects/$slug")({
   component: EditProjectPage,
   head: () => ({
     meta: [
-      { title: "Edit project · Admin — NexaStudio" },
+      { title: "Edit project · Admin — Gipsm Technology" },
       { name: "robots", content: "noindex, nofollow" },
     ],
   }),

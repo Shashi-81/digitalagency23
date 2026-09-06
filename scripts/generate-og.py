@@ -89,9 +89,9 @@ def draw_brand(draw):
     f_tag = load_font("mono", 18)
     # Logo dot
     draw.ellipse([72, 70, 92, 90], fill=PRIMARY)
-    draw.text((104, 66), "NexaStudio", font=f_mark, fill=INK)
+    draw.text((104, 66), "Gipsm Technology", font=f_mark, fill=INK)
     # corner tag
-    tag = "nexastudio.com"
+    tag = "gipsmtechnology.com"
     tw = draw.textlength(tag, font=f_tag)
     draw.text((W - 72 - tw, 73), tag, font=f_tag, fill=MUTED)
 
@@ -103,7 +103,7 @@ def draw_footer(draw, kicker, meta):
     # bottom accent line
     draw.rectangle([72, H - 110, 72 + 60, H - 106], fill=PRIMARY)
 
-def render(filename, eyebrow, title, subtitle, kicker="NexaStudio", meta="Digital experiences that convert"):
+def render(filename, eyebrow, title, subtitle, kicker="Gipsm Technology", meta="Digital experiences that convert"):
     img = base_canvas()
     d = ImageDraw.Draw(img)
     draw_brand(d)
@@ -141,8 +141,8 @@ def render(filename, eyebrow, title, subtitle, kicker="NexaStudio", meta="Digita
 
 # ---- Pages ----
 PAGES = [
-    ("default.jpg", "Studio", "Digital experiences that convert.", "Brand, product, and growth for ambitious teams.", "NexaStudio", "nexastudio.com"),
-    ("home.jpg", "Studio", "Digital experiences that convert.", "Full-stack design & development for ambitious teams.", "NexaStudio", "Brand · Product · Growth"),
+    ("default.jpg", "Studio", "Digital experiences that convert.", "Brand, product, and growth for ambitious teams.", "Gipsm Technology", "gipsmtechnology.com"),
+    ("home.jpg", "Studio", "Digital experiences that convert.", "Full-stack design & development for ambitious teams.", "Gipsm Technology", "Brand · Product · Growth"),
     ("hire-us.jpg", "Engagements", "Let's build something great.", "Project, retainer & advisory engagements — limited slots per quarter.", "Hire Us", "Reply within 24h · Worldwide"),
     ("resources.jpg", "Free Resources", "Playbooks, templates & guides.", "Battle-tested resources from our work with funded startups.", "Resources", "Free downloads"),
     ("thank-you.jpg", "Message received", "Thanks — we'll be in touch.", "A senior strategist personally reviews every brief within 24 hours.", "Thank You", "We reply within 24h"),

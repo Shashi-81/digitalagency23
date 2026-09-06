@@ -73,7 +73,7 @@ export const PRIVACY: LegalDoc = {
       id: "contact-us",
       title: "Contact Us",
       body: [
-        "Questions about this policy or your data? Email privacy@nexastudio.com and we will get back to you within one business day.",
+        "Questions about this policy or your data? Email privacy@gipsmtechnology.com and we will get back to you within one business day.",
       ],
     },
   ],
@@ -84,13 +84,13 @@ export const TERMS: LegalDoc = {
   title: "Terms of Service",
   lastUpdated: LAST_UPDATED,
   intro:
-    "These Terms govern your use of NexaStudio's website and services. By engaging us or using this site, you agree to be bound by them.",
+    "These Terms govern your use of Gipsm Technology's website and services. By engaging us or using this site, you agree to be bound by them.",
   sections: [
     {
       id: "services-description",
       title: "Services Description",
       body: [
-        "NexaStudio provides design, development, branding, SEO, and AI-integration services as described on this website and in individual project Statements of Work (SOW). The SOW for each engagement controls in case of conflict with this page.",
+        "Gipsm Technology provides design, development, branding, SEO, and AI-integration services as described on this website and in individual project Statements of Work (SOW). The SOW for each engagement controls in case of conflict with this page.",
       ],
     },
     {
@@ -121,7 +121,7 @@ export const TERMS: LegalDoc = {
       id: "limitation-of-liability",
       title: "Limitation of Liability",
       body: [
-        "To the maximum extent permitted by law, NexaStudio's total liability arising out of any engagement is limited to the fees paid in the 3 months preceding the claim. We are not liable for indirect, incidental, consequential, or punitive damages.",
+        "To the maximum extent permitted by law, Gipsm Technology's total liability arising out of any engagement is limited to the fees paid in the 3 months preceding the claim. We are not liable for indirect, incidental, consequential, or punitive damages.",
       ],
     },
     {
@@ -135,7 +135,7 @@ export const TERMS: LegalDoc = {
       id: "governing-law",
       title: "Governing Law",
       body: [
-        "These Terms are governed by the laws of the jurisdiction in which NexaStudio is incorporated. Disputes that cannot be resolved amicably will be submitted to the exclusive jurisdiction of the courts of that jurisdiction.",
+        "These Terms are governed by the laws of the jurisdiction in which Gipsm Technology is incorporated. Disputes that cannot be resolved amicably will be submitted to the exclusive jurisdiction of the courts of that jurisdiction.",
       ],
     },
   ],
@@ -146,7 +146,7 @@ export const COOKIES: LegalDoc = {
   title: "Cookie Policy",
   lastUpdated: LAST_UPDATED,
   intro:
-    "This page explains how NexaStudio uses cookies and similar technologies on our website.",
+    "This page explains how Gipsm Technology uses cookies and similar technologies on our website.",
   sections: [
     {
       id: "what-are-cookies",
@@ -210,7 +210,7 @@ export const REFUND: LegalDoc = {
       id: "how-to-request",
       title: "How to Request",
       body: [
-        "Email billing@nexastudio.com with your project name, invoice number, and a brief description of why you are requesting a refund. We acknowledge requests within one business day.",
+        "Email billing@gipsmtechnology.com with your project name, invoice number, and a brief description of why you are requesting a refund. We acknowledge requests within one business day.",
       ],
     },
     {
